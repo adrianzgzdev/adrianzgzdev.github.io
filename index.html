@@ -12,13 +12,9 @@
     <style>
       :root {
         --bg: #0b1020;
-        --card: rgba(255, 255, 255, 0.06);
-        --card2: rgba(255, 255, 255, 0.08);
         --text: rgba(255, 255, 255, 0.92);
         --muted: rgba(255, 255, 255, 0.68);
         --line: rgba(255, 255, 255, 0.12);
-        --accent: #7c3aed; /* morado */
-        --accent2: #22c55e; /* verde */
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         --radius: 18px;
       }
@@ -58,13 +54,13 @@
         color: inherit;
         text-decoration: none;
       }
+
       .wrap {
         max-width: 1050px;
         margin: 0 auto;
         padding: 32px 18px 60px;
       }
 
-      /* Header */
       header {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
@@ -105,7 +101,6 @@
         opacity: 0.55;
         pointer-events: none;
       }
-
       .hero > * {
         position: relative;
       }
@@ -154,6 +149,7 @@
           border-color 0.12s ease;
         font-weight: 600;
         font-size: 14px;
+        cursor: pointer;
       }
       .btn:hover {
         transform: translateY(-1px);
@@ -172,11 +168,15 @@
         filter: brightness(1.03);
       }
 
-      .panel {
+      .panel,
+      section {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid var(--line);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
+      }
+
+      .panel {
         padding: 18px;
       }
 
@@ -188,7 +188,7 @@
       }
 
       .fact {
-        padding: 14px 14px;
+        padding: 14px;
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid var(--line);
         border-radius: 14px;
@@ -202,7 +202,6 @@
         margin-top: 4px;
       }
 
-      /* Sections */
       .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -211,11 +210,7 @@
       }
 
       section {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
         padding: 18px;
-        box-shadow: var(--shadow);
       }
 
       h2 {
@@ -281,7 +276,22 @@
         text-align: center;
       }
 
-      /* Responsive */
+      /* Form inputs */
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--line);
+        color: var(--text);
+        outline: none;
+        font-family: inherit;
+      }
+      textarea {
+        resize: vertical;
+      }
+
       @media (max-width: 900px) {
         header {
           grid-template-columns: 1fr;
@@ -321,7 +331,6 @@
               🐙 GitHub
             </a>
 
-            <!-- Cambia este enlace por tu LinkedIn si lo tienes -->
             <a
               class="btn"
               href="https://www.linkedin.com/"
@@ -331,7 +340,6 @@
               💼 LinkedIn
             </a>
 
-            <!-- Cambia el email -->
             <a class="btn" href="mailto:adrianzgzdev@gmail.com">
               ✉️ adrianzgzdev@gmail.com
             </a>
@@ -355,7 +363,7 @@
             <div class="fact">
               <div class="k">🤖 IA / Automatización</div>
               <div class="v">
-                n8n + OpenAI para resúmenes, correo, organización y workflows.
+                n8n + IA para resúmenes, correo, organización y workflows.
               </div>
             </div>
             <div class="fact">
@@ -381,7 +389,7 @@
               </p>
               <div class="tags">
                 <span class="tag">n8n</span>
-                <span class="tag">OpenAI API</span>
+                <span class="tag">IA</span>
                 <span class="tag">Gmail</span>
                 <span class="tag">RSS</span>
               </div>
@@ -405,7 +413,7 @@
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
                 <span class="tag">GitHub Pages</span>
-                <span class="tag">Cloudflare DNS</span>
+                <span class="tag">Cloudflare</span>
               </div>
               <div class="links">
                 <a
@@ -456,8 +464,8 @@
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
               <span class="tag">Git/GitHub</span>
-              <span class="tag">JavaScript (en progreso)</span>
-              <span class="tag">React (en progreso)</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
             </div>
           </div>
 
@@ -486,8 +494,7 @@
           </div>
 
           <div class="mini">
-            Tip: añade aquí certificaciones / cursos (Hola Mundo, etc.) cuando
-            quieras.
+            Tip: añade aquí certificaciones / cursos cuando quieras.
           </div>
         </section>
       </div>
@@ -496,69 +503,22 @@
         <h2>Contacto</h2>
         <div class="card">
           <h3>¿Hablamos?</h3>
-          <p>
-            Rellena este formulario y me llegará directo a mi sistema en
-            Zaragoza.
-          </p>
+          <p>Rellena este formulario y me llegará directo a mi sistema.</p>
 
           <form
             id="contactForm"
             style="display: grid; gap: 12px; margin-top: 16px"
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Tu Nombre"
-              required
-              style="
-                width: 100%;
-                padding: 12px;
-                border-radius: 12px;
-                background: rgba(0, 0, 0, 0.2);
-                border: 1px solid var(--line);
-                color: var(--text);
-                outline: none;
-              "
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Tu Email"
-              required
-              style="
-                width: 100%;
-                padding: 12px;
-                border-radius: 12px;
-                background: rgba(0, 0, 0, 0.2);
-                border: 1px solid var(--line);
-                color: var(--text);
-                outline: none;
-              "
-            />
-
+            <input type="text" name="name" placeholder="Tu Nombre" required />
+            <input type="email" name="email" placeholder="Tu Email" required />
             <textarea
               name="message"
               placeholder="¿Cómo te puedo ayudar?"
               rows="4"
               required
-              style="
-                width: 100%;
-                padding: 12px;
-                border-radius: 12px;
-                background: rgba(0, 0, 0, 0.2);
-                border: 1px solid var(--line);
-                color: var(--text);
-                outline: none;
-                font-family: inherit;
-              "
             ></textarea>
 
-            <button
-              type="submit"
-              class="btn primary"
-              style="cursor: pointer; font-size: 15px"
-            >
+            <button type="submit" class="btn primary" style="font-size: 15px">
               🚀 Enviar Mensaje
             </button>
           </form>
@@ -576,41 +536,46 @@
 
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-    <script>
+
       const form = document.getElementById("contactForm");
       const statusMsg = document.getElementById("statusMessage");
 
+      // ✅ Cloudflare Worker route (mismo dominio)
+      const webhookUrl = "https://www.adrianzgzdev.com/api/contact";
+
       form.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Evita que la página se recargue
-        statusMsg.textContent = "Enviando datos a Zaragoza... 📡";
+        e.preventDefault();
+        statusMsg.textContent = "Enviando datos... 📡";
+        statusMsg.style.color = "";
 
-        // Recogemos los datos
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        const webhookUrl = "https://automation-n8n.sauwlc.easypanel.host/webhook/Contact";
+        const fd = new FormData(form);
+        fd.append("source", "adrianzgzdev.com");
+        fd.append("page", location.href);
+        fd.append("ts", new Date().toISOString());
 
         try {
-          const response = await fetch(webhookUrl, {
+          const controller = new AbortController();
+          const t = setTimeout(() => controller.abort(), 12000);
+
+          const res = await fetch(webhookUrl, {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(data),
+            body: fd, // ✅ sin headers, sin JSON
+            signal: controller.signal,
           });
 
-          if (response.ok) {
-            statusMsg.textContent =
-              "✅ ¡Recibido! Me pondré en contacto contigo pronto.";
-            statusMsg.style.color = "#22c55e"; // Verde
-            form.reset(); // Limpia el formulario
-          } else {
-            throw new Error("Error en el servidor");
-          }
-        } catch (error) {
+          clearTimeout(t);
+
+          if (!res.ok) throw new Error("Servidor no OK");
+
+          statusMsg.textContent =
+            "✅ ¡Recibido! Me pondré en contacto contigo pronto.";
+          statusMsg.style.color = "#22c55e";
+          form.reset();
+        } catch (err) {
+          console.error(err);
           statusMsg.textContent =
             "❌ Ups, algo falló. Escríbeme a adrianzgzdev@gmail.com";
-          statusMsg.style.color = "#ef4444"; // Rojo
-          console.error(error);
+          statusMsg.style.color = "#ef4444";
         }
       });
     </script>

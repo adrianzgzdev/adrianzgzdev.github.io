@@ -589,7 +589,7 @@
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        const webhookUrl = "https://automation-n8n.sauwlc.easypanel.host/webhook-test/Contact";
+        const webhookUrl = "https://automation-n8n.sauwlc.easypanel.host/webhook/Contact";
 
         try {
           const response = await fetch(webhookUrl, {

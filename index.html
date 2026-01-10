@@ -589,8 +589,7 @@
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        // 👇 AQUÍ PEGAS TU URL DE N8N (La que copiaste en el paso 1)
-        const webhookUrl = "https://n8n.adrianzgzdev.com/webhook-test/Contacto";
+        const webhookUrl = "https://automation-n8n.sauwlc.easypanel.host/webhook-test/Contact";
 
         try {
           const response = await fetch(webhookUrl, {

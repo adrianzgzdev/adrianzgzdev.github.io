@@ -4,10 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Adrián Zgz Dev | Portfolio</title>
+
     <meta
       name="description"
-      content="Portfolio de Adrián (AdrianZgzDev). Electromecánico en transición a Full-Stack. Proyectos, skills y contacto."
+      content="Portfolio de Adrián Zgz (AdrianZgzDev). Perfil híbrido: Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos, skills y contacto."
     />
+
+    <!-- Canonical + theme -->
+    <link rel="canonical" href="https://www.adrianzgzdev.com/" />
+    <meta name="theme-color" content="#0b1020" />
+
+    <!-- Open Graph (para compartir en LinkedIn/WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Adrián Zgz Dev | Portfolio" />
+    <meta
+      property="og:description"
+      content="Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos reales y contacto."
+    />
+    <meta property="og:url" content="https://www.adrianzgzdev.com/" />
+    <!-- Si tienes imagen OG, descomenta y pon tu ruta:
+    <meta property="og:image" content="https://www.adrianzgzdev.com/og.jpg" />
+    -->
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
 
     <style>
       :root {
@@ -17,6 +37,7 @@
         --line: rgba(255, 255, 255, 0.12);
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         --radius: 18px;
+        --focus: rgba(124, 58, 237, 0.7);
       }
 
       * {
@@ -25,6 +46,9 @@
       html,
       body {
         height: 100%;
+      }
+      html {
+        scroll-behavior: smooth;
       }
       body {
         margin: 0;
@@ -58,7 +82,50 @@
       .wrap {
         max-width: 1050px;
         margin: 0 auto;
-        padding: 32px 18px 60px;
+        padding: 28px 18px 60px;
+      }
+
+      /* Top nav */
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: -0.2px;
+      }
+      .brand .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(124, 58, 237, 0.95),
+          rgba(34, 197, 94, 0.85)
+        );
+        box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+      }
+      nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .navlink {
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 13px;
+      }
+      .navlink:hover {
+        background: rgba(255, 255, 255, 0.07);
       }
 
       header {
@@ -115,6 +182,7 @@
         border: 1px solid var(--line);
         color: var(--muted);
         font-size: 13px;
+        width: fit-content;
       }
 
       h1 {
@@ -146,8 +214,8 @@
         border: 1px solid var(--line);
         background: rgba(255, 255, 255, 0.06);
         transition: transform 0.12s ease, background 0.12s ease,
-          border-color 0.12s ease;
-        font-weight: 600;
+          border-color 0.12s ease, opacity 0.12s ease;
+        font-weight: 700;
         font-size: 14px;
         cursor: pointer;
       }
@@ -155,6 +223,10 @@
         transform: translateY(-1px);
         background: rgba(255, 255, 255, 0.09);
         border-color: rgba(255, 255, 255, 0.22);
+      }
+      .btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
       }
       .btn.primary {
         background: linear-gradient(
@@ -194,7 +266,7 @@
         border-radius: 14px;
       }
       .fact .k {
-        font-weight: 700;
+        font-weight: 800;
       }
       .fact .v {
         color: var(--muted);
@@ -242,6 +314,16 @@
         font-size: 14px;
       }
 
+      .bullets {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 13.5px;
+      }
+      .bullets li {
+        margin: 6px 0;
+      }
+
       .tags {
         display: flex;
         flex-wrap: wrap;
@@ -277,6 +359,13 @@
       }
 
       /* Form inputs */
+      label {
+        display: block;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
       input,
       textarea {
         width: 100%;
@@ -288,11 +377,33 @@
         outline: none;
         font-family: inherit;
       }
+      input:focus,
+      textarea:focus,
+      .btn:focus,
+      .navlink:focus {
+        box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+        border-color: rgba(124, 58, 237, 0.6);
+        outline: none;
+      }
       textarea {
         resize: vertical;
       }
 
+      /* Honeypot - oculto pero accesible para bots */
+      .hp {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
       @media (max-width: 900px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         header {
           grid-template-columns: 1fr;
         }
@@ -305,20 +416,33 @@
 
   <body>
     <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>AdrianZgzDev</span>
+        </div>
+        <nav aria-label="Navegación principal">
+          <a class="navlink" href="#proyectos">Proyectos</a>
+          <a class="navlink" href="#skills">Skills</a>
+          <a class="navlink" href="#contacto">Contacto</a>
+        </nav>
+      </div>
+
       <header>
         <div class="hero">
           <span class="badge"
-            >🛠️ Electromecánico (Linde) → 💻 Full-Stack Developer</span
+            >🛠️ Electromecánica → 💻 Full-Stack & Automatización</span
           >
+
           <h1>
             Adrián ·
             <span style="color: rgba(255, 255, 255, 0.86)">AdrianZgzDev</span>
           </h1>
+
           <p class="subtitle">
-            En transición al mundo Tech. Me gusta construir cosas útiles y
-            medibles: automatizaciones, apps internas y herramientas que ahorran
-            tiempo. Objetivo 2026: moverme a AGV / Tech y alcanzar nivel B2 de
-            inglés.
+            Perfil híbrido: experiencia real en taller + desarrollo. Construyo
+            automatizaciones y herramientas internas con webhooks, APIs y n8n
+            para ahorrar tiempo y reducir errores.
           </p>
 
           <div class="cta">
@@ -331,23 +455,24 @@
               🐙 GitHub
             </a>
 
+            <!-- TODO: pon tu URL real de LinkedIn aquí -->
             <a
               class="btn"
-              href="https://www.linkedin.com/"
+              href="http://www.linkedin.com/adrianzgzdev"
               target="_blank"
               rel="noopener"
             >
               💼 LinkedIn
             </a>
 
-            <a class="btn" href="mailto:adrianzgzdev@gmail.com">
-              ✉️ adrianzgzdev@gmail.com
-            </a>
+            <a class="btn" href="mailto:adrianzgzdev@gmail.com"> ✉️ Email </a>
+
+            <a class="btn" href="#contacto"> 📩 Contactar </a>
           </div>
 
           <p class="mini">
-            Zaragoza, España · Disponible para proyectos / colaboración ·
-            Aprendiendo: Python, HTML/CSS, Git, JS, React
+            Zaragoza, España · Disponible para colaboración/proyectos · Stack
+            actual: HTML/CSS, Git, JS, Python (en progreso), n8n
           </p>
         </div>
 
@@ -356,20 +481,17 @@
             <div class="fact">
               <div class="k">🎯 Enfoque</div>
               <div class="v">
-                Portfolio + hábitos: código diario, inglés diario, proyectos
-                reales.
+                Proyectos reales, documentación y mejora continua.
               </div>
             </div>
             <div class="fact">
-              <div class="k">🤖 IA / Automatización</div>
-              <div class="v">
-                n8n + IA para resúmenes, correo, organización y workflows.
-              </div>
+              <div class="k">🤖 Automatización</div>
+              <div class="v">n8n + webhooks + IA para flujos de trabajo.</div>
             </div>
             <div class="fact">
-              <div class="k">🧩 Mentalidad</div>
+              <div class="k">🧩 Fortalezas</div>
               <div class="v">
-                Disciplina, mejora continua y documentación (Notion + OneDrive).
+                Mentalidad de sistemas, diagnóstico y ejecución.
               </div>
             </div>
           </div>
@@ -377,22 +499,33 @@
       </header>
 
       <div class="grid">
-        <section>
+        <section id="proyectos">
           <h2>Proyectos</h2>
+
           <div class="cards">
             <div class="card">
               <h3>📰 AI Tech News Digest (n8n)</h3>
               <p>
-                Workflow que recoge noticias (RSS), resume con IA y envía un
-                email diario. Enfocado a aprender y filtrar ruido del mundo
-                tech.
+                Workflow que recopila RSS, resume con IA y envía un email diario
+                con lo relevante.
               </p>
+
               <div class="tags">
                 <span class="tag">n8n</span>
+                <span class="tag">Webhooks</span>
                 <span class="tag">IA</span>
                 <span class="tag">Gmail</span>
                 <span class="tag">RSS</span>
               </div>
+
+              <ul class="bullets">
+                <li>Filtro de fuentes + deduplicación para reducir ruido.</li>
+                <li>
+                  Salida en formato lectura rápida (títulos + resumen + enlace).
+                </li>
+                <li>Preparado para logs y reintentos (robusto).</li>
+              </ul>
+
               <div class="links">
                 <a class="btn" href="#" target="_blank" rel="noopener"
                   >🔗 Demo (pronto)</a
@@ -404,17 +537,24 @@
             </div>
 
             <div class="card">
-              <h3>🏗️ Mini Portfolio / CV</h3>
+              <h3>🏗️ Portfolio / CV (GitHub Pages)</h3>
               <p>
-                Web estática con GitHub Pages + dominio propio, preparada para
-                ir añadiendo proyectos. Optimizada para velocidad y lectura.
+                Web estática optimizada para lectura, velocidad y claridad.
+                Preparada para ir añadiendo proyectos y casos de estudio.
               </p>
+
               <div class="tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
                 <span class="tag">GitHub Pages</span>
                 <span class="tag">Cloudflare</span>
               </div>
+
+              <ul class="bullets">
+                <li>Diseño limpio, responsive y con jerarquía clara.</li>
+                <li>Base SEO/OG lista para compartir en LinkedIn.</li>
+              </ul>
+
               <div class="links">
                 <a
                   class="btn"
@@ -434,16 +574,19 @@
             </div>
 
             <div class="card">
-              <h3>⚙️ (Próximo) App interna para AGV / mantenimiento</h3>
+              <h3>⚙️ (Próximo) App interna: checklist & diagnóstico</h3>
               <p>
                 Idea: checklist digital, registro de fallos y guía rápida de
-                diagnósticos. Unir experiencia de taller + desarrollo.
+                diagnóstico para mantenimiento. Unir experiencia de taller +
+                software.
               </p>
+
               <div class="tags">
                 <span class="tag">React (planned)</span>
                 <span class="tag">Node (planned)</span>
                 <span class="tag">DB (planned)</span>
               </div>
+
               <div class="links">
                 <a class="btn" href="#" target="_blank" rel="noopener"
                   >🧠 Roadmap (pronto)</a
@@ -453,25 +596,31 @@
           </div>
         </section>
 
-        <section>
+        <section id="skills">
           <h2>Skills</h2>
 
           <div class="card" style="margin-bottom: 12px">
             <h3>💻 Desarrollo</h3>
-            <p>Fundamentos sólidos y avanzando con proyectos reales.</p>
+            <p>
+              Aprendizaje orientado a proyectos. Prioridad: fundamentos +
+              entrega.
+            </p>
             <div class="tags">
-              <span class="tag">Python</span>
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
-              <span class="tag">Git/GitHub</span>
               <span class="tag">JavaScript</span>
-              <span class="tag">React</span>
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">Python</span>
+              <span class="tag">React (en progreso)</span>
             </div>
           </div>
 
           <div class="card" style="margin-bottom: 12px">
             <h3>🛠️ Perfil híbrido</h3>
-            <p>Electromecánica + diagnóstico + mentalidad de sistemas.</p>
+            <p>
+              Electromecánica + diagnóstico + mentalidad de sistemas
+              (industrial).
+            </p>
             <div class="tags">
               <span class="tag">Mantenimiento industrial</span>
               <span class="tag">AGV / carretillas</span>
@@ -482,24 +631,22 @@
 
           <div class="card">
             <h3>🇺🇸 Inglés</h3>
-            <p>
-              Objetivo: B2. Inmersión diaria con apps en inglés + práctica
-              enfocada.
-            </p>
+            <p>Objetivo: B2. Enfoque práctico y diario.</p>
             <div class="tags">
-              <span class="tag">Vocabulario Tech</span>
-              <span class="tag">Comprensión lectora</span>
+              <span class="tag">Tech vocab</span>
+              <span class="tag">Reading</span>
               <span class="tag">Speaking (en progreso)</span>
             </div>
           </div>
 
           <div class="mini">
-            Tip: añade aquí certificaciones / cursos cuando quieras.
+            Consejo: añade aquí 1 línea de “Qué estás buscando” cuando reabras
+            LinkedIn (rol/área).
           </div>
         </section>
       </div>
 
-      <section style="margin-top: 18px">
+      <section id="contacto" style="margin-top: 18px">
         <h2>Contacto</h2>
         <div class="card">
           <h3>¿Hablamos?</h3>
@@ -509,24 +656,58 @@
             id="contactForm"
             style="display: grid; gap: 12px; margin-top: 16px"
           >
-            <input type="text" name="name" placeholder="Tu Nombre" required />
-            <input type="email" name="email" placeholder="Tu Email" required />
-            <textarea
-              name="message"
-              placeholder="¿Cómo te puedo ayudar?"
-              rows="4"
-              required
-            ></textarea>
-
-            <button type="submit" class="btn primary" style="font-size: 15px">
+            <!-- Honeypot (fuera del botón y oculto correctamente) -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Website</label>
               <input
+                id="website"
                 type="text"
                 name="honeypot"
-                style="display: none !important"
                 tabindex="-1"
                 autocomplete="off"
               />
-              🚀 Enviar Mensaje
+            </div>
+
+            <div>
+              <label for="name">Nombre</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Tu email"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="¿Cómo te puedo ayudar?"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              id="submitBtn"
+              type="submit"
+              class="btn primary"
+              style="font-size: 15px"
+            >
+              🚀 Enviar mensaje
             </button>
           </form>
 
@@ -534,6 +715,7 @@
             id="statusMessage"
             class="mini"
             style="margin-top: 12px; min-height: 20px"
+            aria-live="polite"
           ></p>
         </div>
       </section>
@@ -546,14 +728,24 @@
 
       const form = document.getElementById("contactForm");
       const statusMsg = document.getElementById("statusMessage");
+      const submitBtn = document.getElementById("submitBtn");
 
-      // ✅ Cloudflare Worker route (mismo dominio) cambiado
+      // ✅ Tu webhook (ya lo tienes bien)
       const webhookUrl = "https://n8n.adrianzgzdev.com/webhook/form_contact";
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        // Honeypot check (si viene lleno, cancelamos silencioso)
+        const hp = form.querySelector('input[name="honeypot"]');
+        if (hp && hp.value.trim() !== "") {
+          statusMsg.textContent = "✅ ¡Recibido!";
+          return;
+        }
+
         statusMsg.textContent = "Enviando datos... 📡";
         statusMsg.style.color = "";
+        submitBtn.disabled = true;
 
         const fd = new FormData(form);
         fd.append("source", "adrianzgzdev.com");
@@ -566,7 +758,7 @@
 
           const res = await fetch(webhookUrl, {
             method: "POST",
-            body: fd, // ✅ sin headers, sin JSON
+            body: fd,
             signal: controller.signal,
           });
 
@@ -583,6 +775,8 @@
           statusMsg.textContent =
             "❌ Ups, algo falló. Escríbeme a adrianzgzdev@gmail.com";
           statusMsg.style.color = "#ef4444";
+        } finally {
+          submitBtn.disabled = false;
         }
       });
     </script>

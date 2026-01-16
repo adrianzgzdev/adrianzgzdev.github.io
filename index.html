@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -52,10 +52,19 @@
       }
       body {
         margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
         color: var(--text);
-        background: radial-gradient(
+        background:
+          radial-gradient(
             900px 500px at 15% 10%,
             rgba(124, 58, 237, 0.25),
             transparent 60%
@@ -154,7 +163,8 @@
         content: "";
         position: absolute;
         inset: -2px;
-        background: radial-gradient(
+        background:
+          radial-gradient(
             500px 200px at 20% 0%,
             rgba(124, 58, 237, 0.35),
             transparent 60%
@@ -213,8 +223,11 @@
         border-radius: 12px;
         border: 1px solid var(--line);
         background: rgba(255, 255, 255, 0.06);
-        transition: transform 0.12s ease, background 0.12s ease,
-          border-color 0.12s ease, opacity 0.12s ease;
+        transition:
+          transform 0.12s ease,
+          background 0.12s ease,
+          border-color 0.12s ease,
+          opacity 0.12s ease;
         font-weight: 700;
         font-size: 14px;
         cursor: pointer;
@@ -502,39 +515,50 @@
           <h2>Proyectos</h2>
 
           <div class="cards">
+            <!-- 1) AI Contact Router -->
             <div class="card">
-              <h3>📰 AI Tech News Digest (n8n)</h3>
+              <h3>🤖 AI Contact Router (n8n)</h3>
               <p>
-                Workflow que recopila RSS, resume con IA y envía un email diario
-                con lo relevante.
+                Workflow que recibe el formulario, filtra spam (honeypot),
+                clasifica y resume con IA, y notifica por Gmail + Telegram.
               </p>
 
               <div class="tags">
                 <span class="tag">n8n</span>
                 <span class="tag">Webhooks</span>
-                <span class="tag">IA</span>
+                <span class="tag">OpenAI</span>
                 <span class="tag">Gmail</span>
-                <span class="tag">RSS</span>
+                <span class="tag">Telegram</span>
+                <span class="tag">Anti-spam</span>
               </div>
 
               <ul class="bullets">
-                <li>Filtro de fuentes + deduplicación para reducir ruido.</li>
+                <li>Honeypot + validación antes de gastar tokens.</li>
+                <li>Clasificación + resumen corto y accionable.</li>
                 <li>
-                  Salida en formato lectura rápida (títulos + resumen + enlace).
+                  Notificación inmediata (Gmail) + alerta rápida (Telegram).
                 </li>
-                <li>Preparado para logs y reintentos (robusto).</li>
               </ul>
 
               <div class="links">
-                <a class="btn" href="#" target="_blank" rel="noopener"
-                  >🔗 Demo (pronto)</a
+                <a
+                  class="btn"
+                  href="https://www.adrianzgzdev.com/#contacto"
+                  target="_blank"
+                  rel="noopener"
+                  >🔗 Demo</a
                 >
-                <a class="btn" href="#" target="_blank" rel="noopener"
-                  >📦 Repo (pronto)</a
+                <a
+                  class="btn"
+                  href="https://github.com/adrianzgzdev/n8n-ai-contact-router"
+                  target="_blank"
+                  rel="noopener"
+                  >📦 Repo</a
                 >
               </div>
             </div>
 
+            <!-- 2) Portfolio / CV -->
             <div class="card">
               <h3>🏗️ Portfolio / CV (GitHub Pages)</h3>
               <p>
@@ -572,6 +596,7 @@
               </div>
             </div>
 
+            <!-- 3) Próximo -->
             <div class="card">
               <h3>⚙️ (Próximo) App interna: checklist & diagnóstico</h3>
               <p>
@@ -781,3 +806,4 @@
     </script>
   </body>
 </html>
+<!-- Cambia todo lo que veas necesario porfi -->

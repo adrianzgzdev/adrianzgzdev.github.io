@@ -17,11 +17,9 @@
       content="Portfolio de Adrián Zgz (AdrianZgzDev). Perfil híbrido: Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos, skills y contacto."
     />
 
-    <!-- Canonical + theme -->
     <link rel="canonical" href="https://www.adrianzgzdev.com/" />
     <meta name="theme-color" content="#0b1020" />
 
-    <!-- Open Graph (para compartir en LinkedIn/WhatsApp) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Adrián Zgz Dev | Portfolio" />
     <meta
@@ -29,9 +27,6 @@
       content="Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos reales y contacto."
     />
     <meta property="og:url" content="https://www.adrianzgzdev.com/" />
-    <!-- <meta property="og:image" content="https://www.adrianzgzdev.com/og.jpg" /> -->
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
 
     <style>
@@ -44,7 +39,6 @@
         --radius: 18px;
         --focus: rgba(124, 58, 237, 0.7);
       }
-
       * {
         box-sizing: border-box;
       }
@@ -87,19 +81,16 @@
           var(--bg);
         line-height: 1.55;
       }
-
       a {
         color: inherit;
         text-decoration: none;
       }
-
       .wrap {
         max-width: 1050px;
         margin: 0 auto;
         padding: 28px 18px 60px;
       }
 
-      /* Top nav */
       .topbar {
         display: flex;
         justify-content: space-between;
@@ -149,7 +140,6 @@
         align-items: stretch;
         margin-top: 10px;
       }
-
       .hero {
         background: linear-gradient(
           180deg,
@@ -163,7 +153,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .hero::before {
         content: "";
         position: absolute;
@@ -205,13 +194,11 @@
         margin: 14px 0 8px;
         letter-spacing: -0.5px;
       }
-
       .subtitle {
         color: var(--muted);
         margin: 0 0 16px;
         font-size: 15.5px;
       }
-
       .cta {
         display: flex;
         flex-wrap: wrap;
@@ -265,7 +252,6 @@
         border-radius: var(--radius);
         box-shadow: var(--shadow);
       }
-
       .panel {
         padding: 18px;
       }
@@ -276,7 +262,6 @@
         height: 100%;
         align-content: start;
       }
-
       .fact {
         padding: 14px;
         background: rgba(255, 255, 255, 0.06);
@@ -298,11 +283,9 @@
         gap: 18px;
         margin-top: 18px;
       }
-
       section {
         padding: 18px;
       }
-
       h2 {
         font-size: 16px;
         margin: 0 0 12px;
@@ -315,7 +298,6 @@
         display: grid;
         gap: 12px;
       }
-
       .card {
         border: 1px solid var(--line);
         background: rgba(255, 255, 255, 0.06);
@@ -362,7 +344,6 @@
         gap: 10px;
         margin-top: 10px;
       }
-
       .mini {
         font-size: 13px;
         color: var(--muted);
@@ -376,7 +357,6 @@
         text-align: center;
       }
 
-      /* Form inputs */
       label {
         display: block;
         font-size: 13px;
@@ -407,7 +387,6 @@
         resize: vertical;
       }
 
-      /* Honeypot - oculto pero accesible para bots */
       .hp {
         position: absolute;
         left: -10000px;
@@ -451,12 +430,10 @@
           <span class="badge"
             >🛠️ Electromecánica → 💻 Full-Stack & Automatización</span
           >
-
           <h1>
             Adrián ·
             <span style="color: rgba(255, 255, 255, 0.86)">AdrianZgzDev</span>
           </h1>
-
           <p class="subtitle">
             Perfil híbrido: experiencia real en taller + desarrollo. Construyo
             automatizaciones y herramientas internas con webhooks, APIs y n8n
@@ -469,21 +446,17 @@
               href="https://github.com/adrianzgzdev"
               target="_blank"
               rel="noopener"
+              >🐙 GitHub</a
             >
-              🐙 GitHub
-            </a>
-
             <a
               class="btn"
               href="https://www.linkedin.com/in/adrianzgzdev"
               target="_blank"
               rel="noopener"
+              >💼 LinkedIn</a
             >
-              💼 LinkedIn
-            </a>
-
-            <a class="btn" href="mailto:adrianzgzdev@gmail.com"> ✉️ Email </a>
-            <a class="btn" href="#contacto"> 📩 Contactar </a>
+            <a class="btn" href="mailto:adrianzgzdev@gmail.com">✉️ Email</a>
+            <a class="btn" href="#contacto">📩 Contactar</a>
           </div>
 
           <p class="mini">
@@ -517,7 +490,6 @@
       <div class="grid">
         <section id="proyectos">
           <h2>Proyectos</h2>
-
           <div class="cards">
             <div class="card">
               <h3>🤖 AI Contact Router (n8n)</h3>
@@ -525,16 +497,12 @@
                 Workflow que recibe el formulario, filtra spam (honeypot),
                 clasifica y resume con IA, y notifica por Gmail + Telegram.
               </p>
-
               <div class="tags">
-                <span class="tag">n8n</span>
-                <span class="tag">Webhooks</span>
-                <span class="tag">OpenAI</span>
-                <span class="tag">Gmail</span>
-                <span class="tag">Telegram</span>
-                <span class="tag">Anti-spam</span>
+                <span class="tag">n8n</span><span class="tag">Webhooks</span
+                ><span class="tag">OpenAI</span> <span class="tag">Gmail</span
+                ><span class="tag">Telegram</span
+                ><span class="tag">Anti-spam</span>
               </div>
-
               <ul class="bullets">
                 <li>Honeypot + validación antes de gastar tokens.</li>
                 <li>Clasificación + resumen corto y accionable.</li>
@@ -542,7 +510,6 @@
                   Notificación inmediata (Gmail) + alerta rápida (Telegram).
                 </li>
               </ul>
-
               <div class="links">
                 <a
                   class="btn"
@@ -567,19 +534,15 @@
                 Web estática optimizada para lectura, velocidad y claridad.
                 Preparada para ir añadiendo proyectos y casos de estudio.
               </p>
-
               <div class="tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">GitHub Pages</span>
-                <span class="tag">Cloudflare</span>
+                <span class="tag">HTML</span><span class="tag">CSS</span
+                ><span class="tag">GitHub Pages</span
+                ><span class="tag">Cloudflare</span>
               </div>
-
               <ul class="bullets">
                 <li>Diseño limpio, responsive y con jerarquía clara.</li>
                 <li>Base SEO/OG lista para compartir en LinkedIn.</li>
               </ul>
-
               <div class="links">
                 <a
                   class="btn"
@@ -605,13 +568,11 @@
                 diagnóstico para mantenimiento. Unir experiencia de taller +
                 software.
               </p>
-
               <div class="tags">
                 <span class="tag">React (plan)</span>
                 <span class="tag">Node (plan)</span>
                 <span class="tag">BD (plan)</span>
               </div>
-
               <div class="links">
                 <a class="btn" href="#" target="_blank" rel="noopener"
                   >🧠 Roadmap (pronto)</a
@@ -631,12 +592,10 @@
               entrega.
             </p>
             <div class="tags">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Git/GitHub</span>
-              <span class="tag">Python</span>
-              <span class="tag">React (en progreso)</span>
+              <span class="tag">HTML5</span><span class="tag">CSS3</span
+              ><span class="tag">JavaScript</span>
+              <span class="tag">Git/GitHub</span><span class="tag">Python</span
+              ><span class="tag">React (en progreso)</span>
             </div>
           </div>
 
@@ -649,17 +608,15 @@
               No vendo “experiencia dev”: aporto criterio técnico de campo,
               diagnóstico y mentalidad de sistemas.
             </p>
-
             <div class="tags">
               <span class="tag">AGV / Carretillas</span>
-              <span class="tag">Vehículo industrial</span>
+              <span class="tag">Vehículo industrial (camión/furgonetas)</span>
               <span class="tag">Diagnóstico</span>
-              <span class="tag">Baterías de litio</span>
+              <span class="tag">Baterías de litio (especialista)</span>
               <span class="tag">Automatización (n8n)</span>
               <span class="tag">Full-Stack (en formación)</span>
               <span class="tag">Documentación</span>
             </div>
-
             <p class="mini" style="margin-top: 10px">
               Busco roles Tech/AGV (automatización, soporte, soluciones
               internas) donde mi experiencia como técnico sea una ventaja.
@@ -673,9 +630,8 @@
               entornos tech.
             </p>
             <div class="tags">
-              <span class="tag">Tech vocab</span>
-              <span class="tag">Reading</span>
-              <span class="tag">Speaking (en progreso)</span>
+              <span class="tag">Tech vocab</span><span class="tag">Reading</span
+              ><span class="tag">Speaking (en progreso)</span>
             </div>
           </div>
         </section>
@@ -691,7 +647,6 @@
             id="contactForm"
             style="display: grid; gap: 12px; margin-top: 16px"
           >
-            <!-- Honeypot -->
             <div class="hp" aria-hidden="true">
               <label for="website">Website</label>
               <input
@@ -736,8 +691,12 @@
               ></textarea>
             </div>
 
-            <!-- Turnstile render target -->
-            <div id="ts" aria-hidden="true"></div>
+            <!-- Turnstile widget (invisible) -->
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAACNBcPIlgokieADp"
+              data-size="invisible"
+            ></div>
 
             <button
               id="submitBtn"
@@ -768,56 +727,37 @@
       const statusMsg = document.getElementById("statusMessage");
       const submitBtn = document.getElementById("submitBtn");
 
-      // ✅ Tu webhook
+      // ✅ Tu webhook (producción)
       const webhookUrl = "https://n8n.adrianzgzdev.com/webhook/form_contact";
 
-      // ✅ Turnstile config (TU sitekey REAL)
-      const TURNSTILE_SITEKEY = "0x4AAAAAACNBcPIlgokieADp";
+      // Turnstile: render una sola vez, y en submit hacemos execute()
+      const tsEl = document.querySelector(".cf-turnstile");
       let tsWidgetId = null;
 
-      // Render Turnstile una sola vez cuando cargue
-      window.addEventListener("load", () => {
-        if (!window.turnstile) return;
+      function ensureTurnstileRendered() {
+        if (!tsEl || !window.turnstile) return;
+        if (tsWidgetId !== null) return;
 
-        try {
-          tsWidgetId = window.turnstile.render("#ts", {
-            sitekey: TURNSTILE_SITEKEY,
-            size: "invisible",
-          });
-        } catch (e) {
-          // si falla render, no rompemos el formulario
-          console.warn("Turnstile render failed:", e);
-          tsWidgetId = null;
-        }
-      });
-
-      function wait(ms) {
-        return new Promise((r) => setTimeout(r, ms));
+        const sitekey = tsEl.dataset.sitekey;
+        tsWidgetId = window.turnstile.render(tsEl, {
+          sitekey,
+          size: "invisible",
+        });
       }
 
       async function getTurnstileToken() {
-        // Si Turnstile no está disponible, no bloqueamos el envío
-        if (!window.turnstile || tsWidgetId === null) return null;
+        if (!tsEl || !window.turnstile) return null;
 
-        // Ejecuta el challenge
-        let token = null;
+        ensureTurnstileRendered();
 
-        // Turnstile devuelve token vía callback, pero como lo hemos renderizado sin callback,
-        // lo capturamos con getResponse.
-        window.turnstile.execute(tsWidgetId);
-
-        // Espera hasta 5s a que aparezca response
-        for (let i = 0; i < 100; i++) {
-          token = window.turnstile.getResponse(tsWidgetId);
-          if (token) return token;
-          await wait(50);
-        }
-
-        // Si no hay token, resetea y seguimos sin romper
-        try {
-          window.turnstile.reset(tsWidgetId);
-        } catch (_) {}
-        return null;
+        return await new Promise((resolve, reject) => {
+          // Re-render no: solo execute y esperamos callback
+          window.turnstile.execute(tsWidgetId, {
+            callback: (token) => resolve(token),
+            "error-callback": () => reject(new Error("Turnstile error")),
+            "expired-callback": () => reject(new Error("Turnstile expired")),
+          });
+        });
       }
 
       form.addEventListener("submit", async (e) => {
@@ -827,38 +767,41 @@
         const hp = form.querySelector('input[name="honeypot"]');
         if (hp && hp.value.trim() !== "") {
           statusMsg.textContent = "✅ ¡Recibido!";
-          statusMsg.style.color = "#22c55e";
           return;
         }
 
-        statusMsg.textContent = "Enviando... 📡";
+        statusMsg.textContent = "Verificando... 🛡️";
         statusMsg.style.color = "";
         submitBtn.disabled = true;
 
+        const controller = new AbortController();
+        const t = setTimeout(() => controller.abort(), 12000);
+
         try {
-          // Turnstile (invisible) -> token (si hay)
-          const tsToken = await getTurnstileToken();
+          // 1) Turnstile token (si está disponible)
+          let token = null;
+          try {
+            token = await getTurnstileToken();
+          } catch (err) {
+            // Si falla Turnstile, cortamos aquí (más seguro)
+            throw err;
+          }
+
+          statusMsg.textContent = "Enviando datos... 📡";
 
           const fd = new FormData(form);
           fd.append("source", "adrianzgzdev.com");
           fd.append("page", location.href);
           fd.append("ts", new Date().toISOString());
 
-          // Enviar token si existe
-          if (tsToken) {
-            fd.append("cf-turnstile-response", tsToken);
-          }
-
-          const controller = new AbortController();
-          const t = setTimeout(() => controller.abort(), 12000);
+          // Importante: mandamos el token explícito
+          if (token) fd.append("cf-turnstile-response", token);
 
           const res = await fetch(webhookUrl, {
             method: "POST",
             body: fd,
             signal: controller.signal,
           });
-
-          clearTimeout(t);
 
           if (!res.ok) throw new Error("Servidor no OK");
 
@@ -867,25 +810,17 @@
           statusMsg.style.color = "#22c55e";
           form.reset();
 
-          // Reset turnstile para siguiente envío
+          // Reset del widget para próximos envíos
           if (window.turnstile && tsWidgetId !== null) {
-            try {
-              window.turnstile.reset(tsWidgetId);
-            } catch (_) {}
+            window.turnstile.reset(tsWidgetId);
           }
         } catch (err) {
           console.error(err);
           statusMsg.textContent =
             "❌ Ups, algo falló. Escríbeme a adrianzgzdev@gmail.com";
           statusMsg.style.color = "#ef4444";
-
-          // Reset turnstile si algo falla
-          if (window.turnstile && tsWidgetId !== null) {
-            try {
-              window.turnstile.reset(tsWidgetId);
-            } catch (_) {}
-          }
         } finally {
+          clearTimeout(t);
           submitBtn.disabled = false;
         }
       });

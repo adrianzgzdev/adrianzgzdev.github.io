@@ -4,6 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Adrián Zgz Dev | Portfolio</title>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
 
     <meta
       name="description"
@@ -734,6 +739,11 @@
                 required
               ></textarea>
             </div>
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAACNBcPIlgokieADp"
+              data-size="invisible"
+            ></div>
 
             <button
               id="submitBtn"
@@ -770,23 +780,40 @@
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        // Honeypot check (si viene lleno, cancelamos silencioso)
+        // Honeypot
         const hp = form.querySelector('input[name="honeypot"]');
         if (hp && hp.value.trim() !== "") {
           statusMsg.textContent = "✅ ¡Recibido!";
           return;
         }
 
-        statusMsg.textContent = "Enviando datos... 📡";
+        statusMsg.textContent = "Verificando... 🛡️";
         statusMsg.style.color = "";
         submitBtn.disabled = true;
 
-        const fd = new FormData(form);
-        fd.append("source", "adrianzgzdev.com");
-        fd.append("page", location.href);
-        fd.append("ts", new Date().toISOString());
-
         try {
+          // Ejecuta Turnstile invisible y espera a que inyecte el token
+          if (window.turnstile) {
+            await new Promise((resolve, reject) => {
+              const id = turnstile.render(".cf-turnstile", {
+                sitekey: "TU_SITE_KEY",
+                size: "invisible",
+                callback: () => resolve(),
+                "error-callback": () => reject(new Error("Turnstile error")),
+                "expired-callback": () =>
+                  reject(new Error("Turnstile expired")),
+              });
+              turnstile.execute(id);
+            });
+          }
+
+          statusMsg.textContent = "Enviando datos... 📡";
+
+          const fd = new FormData(form);
+          fd.append("source", "adrianzgzdev.com");
+          fd.append("page", location.href);
+          fd.append("ts", new Date().toISOString());
+
           const controller = new AbortController();
           const t = setTimeout(() => controller.abort(), 12000);
 
@@ -816,4 +843,3 @@
     </script>
   </body>
 </html>
-<!-- Cambia todo lo que veas necesario porfi -->

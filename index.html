@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Adrián Zgz Dev | Portfolio</title>
+
+    <!-- Cloudflare Turnstile -->
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
       async
@@ -27,9 +29,7 @@
       content="Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos reales y contacto."
     />
     <meta property="og:url" content="https://www.adrianzgzdev.com/" />
-    <!-- Si tienes imagen OG, descomenta y pon tu ruta:
-    <meta property="og:image" content="https://www.adrianzgzdev.com/og.jpg" />
-    -->
+    <!-- <meta property="og:image" content="https://www.adrianzgzdev.com/og.jpg" /> -->
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -483,7 +483,6 @@
             </a>
 
             <a class="btn" href="mailto:adrianzgzdev@gmail.com"> ✉️ Email </a>
-
             <a class="btn" href="#contacto"> 📩 Contactar </a>
           </div>
 
@@ -520,7 +519,6 @@
           <h2>Proyectos</h2>
 
           <div class="cards">
-            <!-- 1) AI Contact Router -->
             <div class="card">
               <h3>🤖 AI Contact Router (n8n)</h3>
               <p>
@@ -563,7 +561,6 @@
               </div>
             </div>
 
-            <!-- 2) Portfolio / CV -->
             <div class="card">
               <h3>🏗️ Portfolio / CV (GitHub Pages)</h3>
               <p>
@@ -601,7 +598,6 @@
               </div>
             </div>
 
-            <!-- 3) Próximo -->
             <div class="card">
               <h3>⚙️ (Próximo) App interna: checklist & diagnóstico</h3>
               <p>
@@ -611,9 +607,9 @@
               </p>
 
               <div class="tags">
-                <span class="tag">React (planned)</span>
-                <span class="tag">Node (planned)</span>
-                <span class="tag">DB (planned)</span>
+                <span class="tag">React (plan)</span>
+                <span class="tag">Node (plan)</span>
+                <span class="tag">BD (plan)</span>
               </div>
 
               <div class="links">
@@ -656,9 +652,9 @@
 
             <div class="tags">
               <span class="tag">AGV / Carretillas</span>
-              <span class="tag">Vehículo industrial (camión/furgonetas)</span>
+              <span class="tag">Vehículo industrial</span>
               <span class="tag">Diagnóstico</span>
-              <span class="tag">Baterías de litio (especialista)</span>
+              <span class="tag">Baterías de litio</span>
               <span class="tag">Automatización (n8n)</span>
               <span class="tag">Full-Stack (en formación)</span>
               <span class="tag">Documentación</span>
@@ -695,7 +691,7 @@
             id="contactForm"
             style="display: grid; gap: 12px; margin-top: 16px"
           >
-            <!-- Honeypot (fuera del botón y oculto correctamente) -->
+            <!-- Honeypot -->
             <div class="hp" aria-hidden="true">
               <label for="website">Website</label>
               <input
@@ -739,11 +735,9 @@
                 required
               ></textarea>
             </div>
-            <div
-              class="cf-turnstile"
-              data-sitekey="0x4AAAAAACNBcPIlgokieADp"
-              data-size="invisible"
-            ></div>
+
+            <!-- Turnstile render target -->
+            <div id="ts" aria-hidden="true"></div>
 
             <button
               id="submitBtn"
@@ -774,8 +768,57 @@
       const statusMsg = document.getElementById("statusMessage");
       const submitBtn = document.getElementById("submitBtn");
 
-      // ✅ Tu webhook (ya lo tienes bien)
+      // ✅ Tu webhook
       const webhookUrl = "https://n8n.adrianzgzdev.com/webhook/form_contact";
+
+      // ✅ Turnstile config (TU sitekey REAL)
+      const TURNSTILE_SITEKEY = "0x4AAAAAACNBcPIlgokieADp";
+      let tsWidgetId = null;
+
+      // Render Turnstile una sola vez cuando cargue
+      window.addEventListener("load", () => {
+        if (!window.turnstile) return;
+
+        try {
+          tsWidgetId = window.turnstile.render("#ts", {
+            sitekey: TURNSTILE_SITEKEY,
+            size: "invisible",
+          });
+        } catch (e) {
+          // si falla render, no rompemos el formulario
+          console.warn("Turnstile render failed:", e);
+          tsWidgetId = null;
+        }
+      });
+
+      function wait(ms) {
+        return new Promise((r) => setTimeout(r, ms));
+      }
+
+      async function getTurnstileToken() {
+        // Si Turnstile no está disponible, no bloqueamos el envío
+        if (!window.turnstile || tsWidgetId === null) return null;
+
+        // Ejecuta el challenge
+        let token = null;
+
+        // Turnstile devuelve token vía callback, pero como lo hemos renderizado sin callback,
+        // lo capturamos con getResponse.
+        window.turnstile.execute(tsWidgetId);
+
+        // Espera hasta 5s a que aparezca response
+        for (let i = 0; i < 100; i++) {
+          token = window.turnstile.getResponse(tsWidgetId);
+          if (token) return token;
+          await wait(50);
+        }
+
+        // Si no hay token, resetea y seguimos sin romper
+        try {
+          window.turnstile.reset(tsWidgetId);
+        } catch (_) {}
+        return null;
+      }
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -784,35 +827,27 @@
         const hp = form.querySelector('input[name="honeypot"]');
         if (hp && hp.value.trim() !== "") {
           statusMsg.textContent = "✅ ¡Recibido!";
+          statusMsg.style.color = "#22c55e";
           return;
         }
 
-        statusMsg.textContent = "Verificando... 🛡️";
+        statusMsg.textContent = "Enviando... 📡";
         statusMsg.style.color = "";
         submitBtn.disabled = true;
 
         try {
-          // Ejecuta Turnstile invisible y espera a que inyecte el token
-          if (window.turnstile) {
-            await new Promise((resolve, reject) => {
-              const id = turnstile.render(".cf-turnstile", {
-                sitekey: "TU_SITE_KEY",
-                size: "invisible",
-                callback: () => resolve(),
-                "error-callback": () => reject(new Error("Turnstile error")),
-                "expired-callback": () =>
-                  reject(new Error("Turnstile expired")),
-              });
-              turnstile.execute(id);
-            });
-          }
-
-          statusMsg.textContent = "Enviando datos... 📡";
+          // Turnstile (invisible) -> token (si hay)
+          const tsToken = await getTurnstileToken();
 
           const fd = new FormData(form);
           fd.append("source", "adrianzgzdev.com");
           fd.append("page", location.href);
           fd.append("ts", new Date().toISOString());
+
+          // Enviar token si existe
+          if (tsToken) {
+            fd.append("cf-turnstile-response", tsToken);
+          }
 
           const controller = new AbortController();
           const t = setTimeout(() => controller.abort(), 12000);
@@ -831,11 +866,25 @@
             "✅ ¡Recibido! Me pondré en contacto contigo pronto.";
           statusMsg.style.color = "#22c55e";
           form.reset();
+
+          // Reset turnstile para siguiente envío
+          if (window.turnstile && tsWidgetId !== null) {
+            try {
+              window.turnstile.reset(tsWidgetId);
+            } catch (_) {}
+          }
         } catch (err) {
           console.error(err);
           statusMsg.textContent =
             "❌ Ups, algo falló. Escríbeme a adrianzgzdev@gmail.com";
           statusMsg.style.color = "#ef4444";
+
+          // Reset turnstile si algo falla
+          if (window.turnstile && tsWidgetId !== null) {
+            try {
+              window.turnstile.reset(tsWidgetId);
+            } catch (_) {}
+          }
         } finally {
           submitBtn.disabled = false;
         }

@@ -14,7 +14,7 @@
 
     <meta
       name="description"
-      content="Portfolio de Adrián Zgz (AdrianZgzDev). Perfil híbrido: Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos, skills y contacto."
+      content="Portfolio de Adrián Zgz (AdrianZgzDev). Perfil híbrido: Técnico Electromecánico → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos, skills y contacto."
     />
 
     <!-- Canonical + theme -->
@@ -26,7 +26,7 @@
     <meta property="og:title" content="Adrián Zgz Dev | Portfolio" />
     <meta
       property="og:description"
-      content="Electromecánica → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos reales y contacto."
+      content="Técnico Electromecánico → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos reales y contacto."
     />
     <meta property="og:url" content="https://www.adrianzgzdev.com/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -91,7 +91,7 @@
       }
 
       .wrap {
-        max-width: 1050px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 28px 18px 60px;
       }
@@ -198,8 +198,15 @@
 
       h1 {
         font-size: clamp(26px, 4vw, 38px);
-        margin: 14px 0 8px;
+        margin: 14px 0 6px;
         letter-spacing: -0.5px;
+      }
+
+      .headline-sub {
+        margin: 0 0 14px;
+        color: rgba(255, 255, 255, 0.78);
+        font-weight: 700;
+        letter-spacing: -0.2px;
       }
 
       .subtitle {
@@ -292,6 +299,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 18px;
         margin-top: 18px;
+        align-items: start;
       }
 
       section {
@@ -349,6 +357,7 @@
         border: 1px solid var(--line);
         background: rgba(0, 0, 0, 0.18);
         color: rgba(255, 255, 255, 0.84);
+        white-space: nowrap;
       }
 
       .links {
@@ -442,7 +451,7 @@
       <header>
         <div class="hero">
           <span class="badge"
-            >🛠️ Electromecánica → 💻 Full-Stack & Automatización</span
+            >🛠️ Técnico Electromecánico → 💻 Full-Stack & Automatización</span
           >
 
           <h1>
@@ -450,10 +459,12 @@
             <span style="color: rgba(255, 255, 255, 0.86)">AdrianZgzDev</span>
           </h1>
 
+          <p class="headline-sub">Zaragoza (ES)</p>
+
           <p class="subtitle">
-            Perfil híbrido: experiencia real en taller + desarrollo. Construyo
-            automatizaciones y herramientas internas con webhooks, APIs y n8n
-            para ahorrar tiempo y reducir errores.
+            Perfil híbrido: experiencia real como técnico de campo / taller +
+            desarrollo. Construyo automatizaciones y herramientas internas con
+            webhooks, APIs y n8n para ahorrar tiempo y reducir errores.
           </p>
 
           <div class="cta">
@@ -476,8 +487,8 @@
           </div>
 
           <p class="mini">
-            Zaragoza, España · Disponible para colaboración/proyectos · Stack
-            actual: HTML/CSS, Git, JS, Python (en progreso), n8n
+            Disponible para colaboración/proyectos · Stack actual: HTML/CSS,
+            Git, JS, Python (en progreso), n8n
           </p>
         </div>
 
@@ -499,6 +510,11 @@
                 Mentalidad de sistemas, diagnóstico y ejecución.
               </div>
             </div>
+            <div class="fact">
+              <div class="k">📚 Aprendizaje</div>
+              <div class="v">
+                Construyendo full stack: Frontend, Backend + IA para transformar necesidades operativas en software funcional.
+              </div>
           </div>
         </div>
       </header>
@@ -511,12 +527,14 @@
               <h3>🤖 AI Contact Router (n8n)</h3>
               <p>
                 Workflow que recibe el formulario, filtra spam (honeypot),
-                clasifica y resume con IA, y notifica por Gmail + Telegram.
+                verifica Turnstile, clasifica y resume con IA, y notifica por
+                Gmail + Telegram.
               </p>
 
               <div class="tags">
                 <span class="tag">n8n</span>
                 <span class="tag">Webhooks</span>
+                <span class="tag">Cloudflare Turnstile</span>
                 <span class="tag">OpenAI</span>
                 <span class="tag">Gmail</span>
                 <span class="tag">Telegram</span>
@@ -524,7 +542,9 @@
               </div>
 
               <ul class="bullets">
-                <li>Honeypot + validación antes de gastar tokens.</li>
+                <li>
+                  Anti-spam antes de cualquier llamada externa (cost-saving).
+                </li>
                 <li>Clasificación + resumen corto y accionable.</li>
                 <li>
                   Notificación inmediata (Gmail) + alerta rápida (Telegram).
@@ -546,7 +566,46 @@
                   rel="noopener"
                   >📦 Repo</a
                 >
+                <a
+                  class="btn"
+                  href="https://github.com/adrianzgzdev/n8n-ai-contact-router/blob/main/README.md"
+                  target="_blank"
+                  rel="noopener"
+                  >📄 README</a
+                >
+                                <a
+                  class="btn"
+                  href="https://github.com/adrianzgzdev/n8n-ai-contact-router/blob/main/workflows/ai-contact-router.json"
+                  target="_blank"
+                  rel="noopener"
+                  >🚀 Workflow</a
+                >
               </div>
+            </div>
+
+            <div class="card">
+              <h3>📌 Case study (AI Contact Router)</h3>
+              <p>
+                Caso real orientado a producto interno: entrada pública
+                controlada (portfolio), endpoints privados, y routing
+                instantáneo a canales de trabajo.
+              </p>
+
+              <div class="tags">
+                <span class="tag">VPS (Hetzner)</span>
+                <span class="tag">Docker Swarm</span>
+                <span class="tag">Traefik v3</span>
+                <span class="tag">TLS</span>
+                <span class="tag">Observability (planned)</span>
+              </div>
+
+              <ul class="bullets">
+                <li>Separación clara: web pública → webhook privado.</li>
+                <li>Verificación server-side antes de IA.</li>
+                <li>
+                  Export JSON “sanitized” + README listo para revisión técnica.
+                </li>
+              </ul>
             </div>
 
             <div class="card">
@@ -561,6 +620,7 @@
                 <span class="tag">CSS</span>
                 <span class="tag">GitHub Pages</span>
                 <span class="tag">Cloudflare</span>
+                <span class="tag">SEO/OG</span>
               </div>
 
               <ul class="bullets">
@@ -606,64 +666,173 @@
                 >
               </div>
             </div>
+
+            <div class="card">
+              <h3>🧱 Cómo trabajo (estilo “entrega”)</h3>
+              <p>
+                Priorizo entregables reales: repos limpios, commits claros,
+                documentación y pruebas manuales con herramientas de debug.
+              </p>
+              <ul class="bullets">
+                <li>Commits pequeños y explicativos (historial entendible).</li>
+                <li>README + assets (capturas, exports, notas técnicas).</li>
+                <li>
+                  Debug y verificación: network, status codes, timeouts, CORS.
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
         <section id="skills">
           <h2>Skills</h2>
 
-          <div class="card" style="margin-bottom: 12px">
-            <h3>💻 Desarrollo</h3>
-            <p>
-              Aprendizaje orientado a proyectos. Prioridad: fundamentos +
-              entrega.
-            </p>
-            <div class="tags">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Git/GitHub</span>
-              <span class="tag">Python</span>
-              <span class="tag">React (en progreso)</span>
-            </div>
-          </div>
+          <div class="cards">
+            <div class="card">
+              <h3>💻 Desarrollo (hands-on)</h3>
+              <p>
+                Aprendizaje orientado a proyectos. Prioridad: fundamentos +
+                entrega (código claro, validaciones y documentación).
+              </p>
 
-          <div class="card" style="margin-bottom: 12px">
-            <h3>🧩 Perfil híbrido (Industrial → Tech / AGV)</h3>
-            <p>
-              30 años como técnico electromecánico en entorno industrial. Ahora
-              en transición a Tech/AGV: estoy formándome en Full-Stack y
-              automatización, y construyendo proyectos reales para demostrarlo.
-              No vendo “experiencia dev”: aporto criterio técnico de campo,
-              diagnóstico y mentalidad de sistemas.
-            </p>
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript (DOM, fetch)</span>
+                <span class="tag">Git / GitHub</span>
+                <span class="tag">Python (fundamentals)</span>
+                <span class="tag">React (in progress)</span>
+              </div>
 
-            <div class="tags">
-              <span class="tag">AGV / Carretillas</span>
-              <span class="tag">Vehículo industrial (camión/furgonetas)</span>
-              <span class="tag">Diagnóstico</span>
-              <span class="tag">Baterías de litio (especialista)</span>
-              <span class="tag">Automatización (n8n)</span>
-              <span class="tag">Full-Stack (en formación)</span>
-              <span class="tag">Documentación</span>
+              <ul class="bullets">
+                <li>
+                  Forms + validación + UX feedback (status, loading, errors).
+                </li>
+                <li>Consumo de APIs con fetch y manejo de errores/timeouts.</li>
+                <li>
+                  Trabajo con repos: commits limpios, README, assets y
+                  estructura.
+                </li>
+              </ul>
             </div>
 
-            <p class="mini" style="margin-top: 10px">
-              Busco roles Tech/AGV (automatización, soporte, soluciones
-              internas) donde mi experiencia como técnico sea una ventaja.
-            </p>
-          </div>
+            <div class="card">
+              <h3>🧰 Tooling & Debug</h3>
+              <p>Herramientas que uso para probar, depurar y entregar.</p>
 
-          <div class="card">
-            <h3>Inglés (en progreso)</h3>
-            <p>
-              Objetivo: B2. Enfoque práctico diario orientado a comunicación en
-              entornos tech.
-            </p>
-            <div class="tags">
-              <span class="tag">Tech vocab</span>
-              <span class="tag">Reading</span>
-              <span class="tag">Speaking (en progreso)</span>
+              <div class="tags">
+                <span class="tag">VS Code</span>
+                <span class="tag">Postman</span>
+                <span class="tag">Chrome DevTools</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">JSON</span>
+                <span class="tag">OAuth2 (basics)</span>
+                <span class="tag">Google Cloud (APIs/OAuth)</span>
+                <span class="tag">MongoDB</span>
+              </div>
+
+              <ul class="bullets">
+                <li>
+                  Testing de endpoints (GET/POST) + payloads (FormData/JSON).
+                </li>
+                <li>
+                  Debug de red: requests, headers, CORS, timeouts, status codes.
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>🔌 Automation & Integrations</h3>
+              <p>
+                Diseño de flujos automáticos (n8n) con entrada pública
+                controlada y routing a canales de notificación.
+              </p>
+
+              <div class="tags">
+                <span class="tag">n8n</span>
+                <span class="tag">Webhooks</span>
+                <span class="tag">Routing</span>
+                <span class="tag">Cloudflare Turnstile</span>
+                <span class="tag">Gmail</span>
+                <span class="tag">Telegram Bot</span>
+              </div>
+
+              <ul class="bullets">
+                <li>
+                  Anti-spam: honeypot primero (ahorra coste) + Turnstile
+                  server-side.
+                </li>
+                <li>
+                  IA: clasificación + resumen accionable (prioridad/categoría).
+                </li>
+                <li>
+                  Notificaciones: Gmail (detalle) + Telegram (alerta rápida).
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>🧱 Infrastructure (self-hosted)</h3>
+              <p>
+                Infra propia para desplegar automatizaciones y servicios de
+                forma estable.
+              </p>
+
+              <div class="tags">
+                <span class="tag">VPS (Hetzner)</span>
+                <span class="tag">Docker Swarm</span>
+                <span class="tag">Traefik v3</span>
+                <span class="tag">TLS / Reverse Proxy</span>
+                <span class="tag">Cloudflare</span>
+              </div>
+
+              <ul class="bullets">
+                <li>
+                  Reverse proxy + HTTPS gestionado con Traefik en modo Swarm.
+                </li>
+                <li>
+                  Separación clara entre web pública y endpoints privados.
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>🧩 Perfil híbrido (Industrial → Tech / AGV)</h3>
+              <p>
+                30 años de experiencia real en entorno industrial. Aporto criterio técnico
+                de campo, diagnóstico y mentalidad de sistemas. Construyo
+                soluciones internas que ahorran tiempo y reducen errores.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Carretillas / AGV</span>
+                <span class="tag">Vehículos industriales</span>
+                <span class="tag">Baterías de litio</span>
+                <span class="tag">Diagnóstico</span>
+                <span class="tag">Procesos</span>
+                <span class="tag">Documentación</span>
+                <span class="tag">Automatización</span>
+                
+                
+              </div>
+
+              <p class="mini" style="margin-top: 10px">
+                Busco roles Tech/AGV (automatización, soporte, soluciones
+                internas) donde mi experiencia como técnico sea una ventaja.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>🌍 Inglés (en progreso)</h3>
+              <p>
+                Objetivo: B2. Enfoque práctico diario orientado a comunicación
+                en entornos tech.
+              </p>
+              <div class="tags">
+                <span class="tag">Tech vocabulary</span>
+                <span class="tag">Reading</span>
+                <span class="tag">Speaking (in progress)</span>
+              </div>
             </div>
           </div>
         </section>
@@ -760,10 +929,10 @@
       const statusMsg = document.getElementById("statusMessage");
       const submitBtn = document.getElementById("submitBtn");
 
-      // ✅ Tu webhook (PROD)
+      // ✅ Your webhook (PROD)
       const webhookUrl = "https://n8n.adrianzgzdev.com/webhook/form_contact";
 
-      // Turnstile: render 1 vez y luego execute en cada submit
+      // Turnstile: render once, then execute on each submit
       let tsWidgetId = null;
       let tsResolve = null;
       let tsReject = null;
@@ -772,8 +941,6 @@
         if (!window.turnstile) return;
         const el = document.querySelector(".cf-turnstile");
         if (!el) return;
-
-        // Evita doble render
         if (tsWidgetId !== null) return;
 
         tsWidgetId = turnstile.render(el, {
@@ -807,8 +974,6 @@
 
       async function getTurnstileToken() {
         initTurnstileOnce();
-
-        // Si por lo que sea no está cargado, seguimos sin token (pero n8n debería bloquearlo)
         if (!window.turnstile || tsWidgetId === null) return null;
 
         return await new Promise((resolve, reject) => {
@@ -850,9 +1015,7 @@
 
         try {
           const token = await getTurnstileToken();
-          if (!token) {
-            throw new Error("No Turnstile token");
-          }
+          if (!token) throw new Error("No Turnstile token");
 
           statusMsg.textContent = "Enviando datos... 📡";
 
@@ -873,7 +1036,7 @@
 
           clearTimeout(t);
 
-          if (!res.ok) throw new Error("Servidor no OK");
+          if (!res.ok) throw new Error("Server not OK");
 
           statusMsg.textContent =
             "✅ ¡Recibido! Me pondré en contacto contigo pronto.";

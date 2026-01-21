@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AdrianZgzDev | Portfolio</title>
+
+    <!-- Icons -->
     <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
     <link
       rel="icon"
@@ -25,21 +27,13 @@
     />
     <meta name="theme-color" content="#0b1020" />
 
-    <!-- Turnstile (client) -->
-    <script
-      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-      async
-      defer
-    ></script>
-
     <meta
       name="description"
       content="Portfolio de Adrián Zgz (AdrianZgzDev). Perfil híbrido: Técnico Electromecánico → Full-Stack & Automatización (n8n, Webhooks, APIs). Proyectos, skills y contacto."
     />
 
-    <!-- Canonical + theme -->
+    <!-- Canonical -->
     <link rel="canonical" href="https://www.adrianzgzdev.com/" />
-    <meta name="theme-color" content="#0b1020" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -51,6 +45,21 @@
     <meta property="og:url" content="https://www.adrianzgzdev.com/" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Orbitron (solo para la marca) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Turnstile (client) -->
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+
     <style>
       :root {
         --bg: #0b1020;
@@ -60,6 +69,7 @@
         --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         --radius: 18px;
         --focus: rgba(124, 58, 237, 0.7);
+        --brand: #00e5ff;
       }
 
       * {
@@ -70,7 +80,6 @@
       body {
         height: 100%;
       }
-
       html {
         scroll-behavior: smooth;
       }
@@ -119,6 +128,7 @@
         padding: 28px 18px 60px;
       }
 
+      /* TOPBAR */
       .topbar {
         display: flex;
         justify-content: space-between;
@@ -127,24 +137,51 @@
         margin-bottom: 14px;
       }
 
+      /* ✅ BRAND (icon + text) */
       .brand {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 10px;
-        font-weight: 800;
-        letter-spacing: -0.2px;
+        gap: 12px;
+        padding: 8px 10px;
+        border-radius: 12px;
+        line-height: 1;
       }
 
-      .brand .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 999px;
-        background: linear-gradient(
-          90deg,
-          rgba(124, 58, 237, 0.95),
-          rgba(34, 197, 94, 0.85)
-        );
-        box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+      .brand:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .brand:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+        border: 1px solid rgba(124, 58, 237, 0.6);
+      }
+
+      .brand__icon {
+        height: 56px; /* 52–60 */
+        width: auto;
+        display: block;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
+      }
+
+      .brand__name {
+        font-family:
+          "Orbitron",
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Arial;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.2px;
+        color: var(--brand);
+        line-height: 1;
+        position: relative;
+        top: 1px;
+        text-shadow: 0 10px 22px rgba(0, 229, 255, 0.18);
       }
 
       nav {
@@ -335,7 +372,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 18px;
         margin-top: 18px;
-        align-items: start; /* 🔑 evita el “hueco” al final de la columna */
+        align-items: start;
       }
 
       section {
@@ -474,16 +511,37 @@
           grid-template-columns: 1fr;
         }
       }
+
+      @media (max-width: 520px) {
+        .brand__icon {
+          height: 44px;
+        }
+        .brand__name {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .brand__name {
+          display: none;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="wrap">
       <div class="topbar">
-        <div class="brand">
-          <span class="dot"></span>
-          <span>AdrianZgzDev</span>
-        </div>
+        <!-- ✅ Brand -->
+        <a class="brand" href="/" aria-label="Inicio">
+          <img
+            class="brand__icon"
+            src="assets/brand/logo-icon.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <span class="brand__name">AdrianZgzDev</span>
+        </a>
 
         <nav aria-label="Navegación principal">
           <a class="navlink" href="#proyectos">Proyectos</a>
@@ -507,8 +565,8 @@
           <p class="subtitle">
             Perfil híbrido: experiencia real como técnico de campo / taller +
             desarrollo. Construyo automatizaciones y herramientas internas con
-            <b>webhooks</b>, <b>APIs</b> y <b>n8n</b> para ahorrar tiempo y
-            reducir errores.
+            <b>webhooks</b>, <b>APIs</b> y <b>n8n</b>
+            para ahorrar tiempo y reducir errores.
           </p>
 
           <div class="cta">
@@ -697,7 +755,6 @@
               </div>
             </div>
 
-            <!-- (PRÓXIMO) -->
             <div class="card">
               <h3>
                 ⚙️ (Próximo) Maintenance Checklist MVP (herramienta interna)
@@ -775,7 +832,6 @@
                   reportes, conectándolo a un workflow de seguimiento (labels,
                   prioridad, estado).
                 </li>
-
                 <li>
                   <b>Next project:</b> “Maintenance checklist” MVP (internal
                   tool) para entorno industrial.
@@ -953,6 +1009,7 @@
                 <span class="tag">Speaking (in progress)</span>
               </div>
             </div>
+
             <div class="card">
               <h3>✅ Quality & Delivery</h3>
               <p>

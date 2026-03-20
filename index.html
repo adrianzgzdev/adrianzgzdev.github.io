@@ -664,7 +664,7 @@
                 "
               >
                 <img
-                  src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo.gif"
+                  src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo_phase_2.gif"
                   alt="Simulación de AGV esquivando obstáculos"
                   style="
                     width: 100%;
@@ -692,13 +692,14 @@
               </div>
 
               <h3>
-                🤖 Sistema Logístico Autónomo | Prueba de Concepto con ROS 2
+                🤖 Sistema Logístico Autónomo | Demo de Misión con ROS 2 + Nav2
               </h3>
               <p>
                 Proyecto desarrollado desde cero para aplicar conceptos de
-                mobile robotics en un entorno industrial simulado. Incluye
-                navegación autónoma, planificación de rutas y evasión de
-                obstáculos en un AGV virtual.
+                mobile robotics en un entorno industrial simulado. Evolucionado
+                con navegación autónoma, secuencias de misión y ajuste de
+                comportamiento en maniobras de recogida y entrega sobre un AGV
+                virtual.
               </p>
 
               <div class="tags">
@@ -726,12 +727,18 @@
 
               <ul class="bullets">
                 <li>
-                  <b>Navegación autónoma:</b> Implementación de Local Costmaps
-                  para evasión de obstáculos dinámicos.
+                  <b>Navegación autónoma:</b> Implementación de Nav2 y Local
+                  Costmaps para evasión de obstáculos dinámicos en simulación.
                 </li>
                 <li>
-                  <b>Fleet logic básica:</b> Script en Python con Action Servers
-                  para simular misiones de recogida y entrega.
+                  <b>Mission sequencing:</b> Desarrollo en Python de una misión
+                  completa con estados de approach, pickup, loading, dropoff y
+                  unloading.
+                </li>
+                <li>
+                  <b>Behavior tuning:</b> Ajuste manual de approach y pickup
+                  poses para conseguir una secuencia de recogida más natural y
+                  realista.
                 </li>
                 <li>
                   <b>Visión industrial:</b> Aplicar conocimiento de fricción,

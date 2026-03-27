@@ -664,8 +664,8 @@
                 "
               >
                 <img
-                  src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo_phase_2.gif"
-                  alt="Simulación de AGV esquivando obstáculos"
+                  src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo_phase_3.gif"
+                  alt="Simulación de AGV con navegación, misión y supervisión de seguridad"
                   style="
                     width: 100%;
                     display: block;
@@ -692,14 +692,14 @@
               </div>
 
               <h3>
-                🤖 Sistema Logístico Autónomo | Demo de Misión con ROS 2 + Nav2
+                🤖 AGV Autónomo | Navegación, Misión y Supervisión de Seguridad
               </h3>
               <p>
                 Proyecto desarrollado desde cero para aplicar conceptos de
                 mobile robotics en un entorno industrial simulado. Evolucionado
-                con navegación autónoma, secuencias de misión y ajuste de
-                comportamiento en maniobras de recogida y entrega sobre un AGV
-                virtual.
+                por fases con navegación autónoma, mission sequencing y
+                supervisión de seguridad basada en zonas sobre un AGV virtual
+                con ROS 2 + Nav2.
               </p>
 
               <div class="tags">
@@ -721,7 +721,12 @@
                 <span
                   class="tag"
                   style="border-color: rgba(168, 85, 247, 0.5); color: #d8b4fe"
-                  >Nav2 / SLAM</span
+                  >Nav2</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(248, 113, 113, 0.5); color: #fca5a5"
+                  >Safety Zones</span
                 >
               </div>
 
@@ -731,19 +736,19 @@
                   Costmaps para evasión de obstáculos dinámicos en simulación.
                 </li>
                 <li>
-                  <b>Mission sequencing:</b> Desarrollo en Python de una misión
+                  <b>Ejecución de misión:</b> Desarrollo en Python de una misión
                   completa con estados de approach, pickup, loading, dropoff y
                   unloading.
                 </li>
                 <li>
-                  <b>Behavior tuning:</b> Ajuste manual de approach y pickup
-                  poses para conseguir una secuencia de recogida más natural y
-                  realista.
+                  <b>Supervisión de seguridad:</b> Monitorización en tiempo real
+                  de zonas SAFE, SLOW, STOP y RESTRICTED mediante un nodo ROS 2
+                  desacoplado.
                 </li>
                 <li>
-                  <b>Visión industrial:</b> Aplicar conocimiento de fricción,
-                  cinemática y sensores LiDAR desde mi experiencia previa como
-                  electromecánico.
+                  <b>Visión industrial:</b> Aplicación de criterios de maniobra,
+                  operación y seguridad basados en experiencia real en entorno
+                  industrial.
                 </li>
               </ul>
 

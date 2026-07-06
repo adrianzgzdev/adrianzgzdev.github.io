@@ -84,6 +84,15 @@
         scroll-behavior: smooth;
       }
 
+      section[id] {
+        scroll-margin-top: 24px;
+      }
+
+      ::selection {
+        background: rgba(124, 58, 237, 0.55);
+        color: #fff;
+      }
+
       body {
         margin: 0;
         font-family:
@@ -99,19 +108,19 @@
         color: var(--text);
         background:
           radial-gradient(
-            900px 500px at 15% 10%,
-            rgba(124, 58, 237, 0.25),
-            transparent 60%
+            1100px 650px at 15% 10%,
+            rgba(124, 58, 237, 0.16),
+            transparent 75%
           ),
           radial-gradient(
-            900px 500px at 85% 20%,
-            rgba(34, 197, 94, 0.18),
-            transparent 60%
+            1100px 650px at 85% 20%,
+            rgba(34, 197, 94, 0.11),
+            transparent 75%
           ),
           radial-gradient(
-            900px 600px at 50% 100%,
-            rgba(59, 130, 246, 0.12),
-            transparent 60%
+            1100px 750px at 50% 100%,
+            rgba(59, 130, 246, 0.08),
+            transparent 78%
           ),
           var(--bg);
         line-height: 1.55;
@@ -212,10 +221,11 @@
       }
 
       .hero {
-        background: linear-gradient(
+        background-color: rgba(15, 21, 38, 0.72);
+        background-image: linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0.08),
-          rgba(255, 255, 255, 0.04)
+          rgba(255, 255, 255, 0.07),
+          rgba(255, 255, 255, 0.035)
         );
         border: 1px solid var(--line);
         border-radius: var(--radius);
@@ -333,7 +343,11 @@
 
       .panel,
       section {
-        background: rgba(255, 255, 255, 0.05);
+        background-color: rgba(15, 21, 38, 0.72);
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.045)
+        );
         border: 1px solid var(--line);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
@@ -385,6 +399,22 @@
         letter-spacing: 0.3px;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.86);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      h2::before {
+        content: "";
+        width: 22px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(124, 58, 237, 0.95),
+          rgba(34, 197, 94, 0.85)
+        );
+        flex: none;
       }
 
       .cards {
@@ -397,6 +427,14 @@
         background: rgba(255, 255, 255, 0.06);
         border-radius: 14px;
         padding: 14px;
+        transition:
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+
+      .card:hover {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.075);
       }
 
       .card h3 {
@@ -799,6 +837,130 @@
               </div>
             </div>
 
+            <!-- ✅ PROYECTO PEDIDO SERVICIOS ✅ -->
+            <div class="card">
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 2px;
+                  margin: -14px -14px 14px -14px;
+                  overflow: hidden;
+                  border-radius: 13px 13px 0 0;
+                "
+              >
+                <img
+                  src="assets/projects/pedido-servicios-lista.png"
+                  alt="Lista de partes de trabajo con estado pendiente/volcado y sincronización"
+                  style="
+                    width: 100%;
+                    display: block;
+                    border-bottom: 1px solid var(--line);
+                  "
+                />
+                <img
+                  src="assets/projects/pedido-servicios-timeline.png"
+                  alt="Vista de jornada con cálculo de horas trabajadas y empalmes automáticos"
+                  style="
+                    width: 100%;
+                    display: block;
+                    border-bottom: 1px solid var(--line);
+                  "
+                />
+              </div>
+
+              <h3>
+                🔧 Pedido Servicios — PWA Offline-First con Sincronización
+                Multi-Dispositivo
+              </h3>
+              <p>
+                Herramienta que uso yo mismo en mi trabajo diario de campo. Nace
+                de un problema real: sin cobertura, no podía registrar los
+                partes de trabajo en el momento y tenía que rehacerlos de
+                memoria al recuperar señal. Diseñada offline-first para
+                funcionar siempre, con backend propio para sincronizar entre mi
+                móvil y mi ordenador.
+              </p>
+
+              <div class="tags">
+                <span
+                  class="tag"
+                  style="border-color: rgba(59, 130, 246, 0.5); color: #93c5fd"
+                  >PWA</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(34, 197, 94, 0.5); color: #86efac"
+                  >Node.js</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(34, 197, 94, 0.5); color: #86efac"
+                  >Express</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(168, 85, 247, 0.5); color: #d8b4fe"
+                  >PostgreSQL</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(6, 182, 212, 0.5); color: #67e8f9"
+                  >Docker</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(249, 115, 22, 0.5); color: #fdba74"
+                  >Service Worker</span
+                >
+                <span
+                  class="tag"
+                  style="border-color: rgba(248, 113, 113, 0.5); color: #fca5a5"
+                  >REST API</span
+                >
+              </div>
+
+              <ul class="bullets">
+                <li>
+                  <b>Offline-first real:</b> los datos se guardan siempre en el
+                  dispositivo primero (localStorage); la sincronización es una
+                  capa añadida que nunca bloquea el trabajo, incluso sin
+                  conexión.
+                </li>
+                <li>
+                  <b>Sincronización multi-dispositivo:</b> backend en Node.js +
+                  Express con PostgreSQL, resolución de conflictos por
+                  last-write-wins y borrado lógico para propagar cambios entre
+                  dispositivos sin pérdida de datos.
+                </li>
+                <li>
+                  <b>Infraestructura en producción:</b> API contenerizada con
+                  Docker, desplegada en mi propio VPS junto a mi infraestructura
+                  self-hosted, servida con HTTPS.
+                </li>
+                <li>
+                  <b>Diseño pensado para el campo:</b> interfaz de alto
+                  contraste, botones grandes para uso con guantes/móvil, y una
+                  máscara de horas a medida para evitar errores de entrada.
+                </li>
+                <li>
+                  <b>En uso real:</b> empleada a diario en jornadas de trabajo
+                  de mantenimiento industrial, no es un proyecto de
+                  demostración.
+                </li>
+              </ul>
+
+              <div class="links">
+                <a
+                  class="btn"
+                  href="https://github.com/adrianzgzdev/partes"
+                  target="_blank"
+                  rel="noopener"
+                  >📦 Ver Código (PWA)</a
+                >
+              </div>
+            </div>
+
             <!-- PROYECTO N8N -->
             <div class="card">
               <h3>🤖 AI Contact Router (n8n)</h3>
@@ -829,7 +991,7 @@
                   href="https://github.com/adrianzgzdev/n8n-ai-contact-router"
                   target="_blank"
                   rel="noopener"
-                  >📦 Repo</a
+                  >📦 Ver Código</a
                 >
               </div>
             </div>
@@ -960,6 +1122,8 @@
                 <span class="tag">Node.js / Vite</span>
                 <span class="tag">Postman</span>
                 <span class="tag">Git</span>
+                <span class="tag">Docker</span>
+                <span class="tag">WSL2</span>
               </div>
             </div>
 
@@ -994,6 +1158,60 @@
                   entornos profesionales.
                 </li>
               </ul>
+            </div>
+
+            <div
+              class="card"
+              style="
+                border-color: rgba(234, 179, 8, 0.4);
+                background: rgba(234, 179, 8, 0.05);
+              "
+            >
+              <h3>🚀 Hacia AGV/AMR</h3>
+              <p>
+                Técnico electromecánico desde 1998 y en Linde MH desde 2015,
+                trabajando día a día con carretillas y sistemas de manutención
+                industrial. La transición natural de esa experiencia es el mundo
+                AGV/AMR: robots que resuelven el mismo problema —mover carga de
+                forma segura y eficiente— pero de forma autónoma y coordinada
+                por software.
+              </p>
+              <p>
+                Mi objetivo es unir esos dos mundos: la comprensión profunda de
+                la máquina real con las herramientas de desarrollo full-stack
+                que permiten programarla, monitorizarla y gestionar su flota.
+              </p>
+
+              <ul class="bullets">
+                <li>
+                  <b>De la máquina al algoritmo:</b> conozco a fondo la
+                  mecánica, la electrónica y la operativa de flota que hoy
+                  gestionan estos robots.
+                </li>
+                <li>
+                  <b>Full-stack aplicado:</b> desarrollo de paneles de control,
+                  APIs y dashboards en tiempo real (React, FastAPI, WebSocket)
+                  para supervisar y comandar la operación.
+                </li>
+                <li>
+                  <b>Navegación autónoma:</b> bases prácticas de ROS 2 y Nav2
+                  para entender cómo un AGV percibe, planifica y se mueve por su
+                  entorno.
+                </li>
+                <li>
+                  <b>Objetivo:</b> aportar esa base de campo en equipos de
+                  desarrollo o integración de AGV/AMR, donde conocer la máquina
+                  real marca la diferencia.
+                </li>
+              </ul>
+
+              <div class="tags">
+                <span class="tag">Material Handling</span>
+                <span class="tag">Fleet Management</span>
+                <span class="tag">ROS 2 / Nav2</span>
+                <span class="tag">Full-Stack Web</span>
+                <span class="tag">Real-Time Dashboards</span>
+              </div>
             </div>
           </div>
         </section>

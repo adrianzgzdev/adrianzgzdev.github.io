@@ -30,6 +30,7 @@ El formulario envía los datos (vía `FormData`) a un **webhook de n8n** auto-al
 | [agv_logistics_nav2](https://github.com/adrianzgzdev/agv_logistics_nav2) | Plataforma autónoma de logística AGV con navegación, misiones, supervisión de seguridad y dashboard web en tiempo real | ROS 2 · Nav2 · FastAPI · WebSocket · React |
 | [partes](https://github.com/adrianzgzdev/partes) | Gestión de partes / pedido de servicios | Full-Stack |
 | [n8n-ai-contact-router](https://github.com/adrianzgzdev/n8n-ai-contact-router) | Enrutado inteligente de mensajes de contacto con IA | n8n · Webhooks · OpenAI API |
+| [calculadora-nomina](https://github.com/adrianzgzdev/calculadora-nomina) | Calculadora de nómina (neto mensual y bruto/neto anual) — [demo](https://adrianzgzdev.com/calculadora-nomina/) | HTML · CSS · JS vanilla · localStorage |
 | Infraestructura Self-Hosted | Servicios propios en VPS | Hetzner · Docker Swarm · Traefik v3 · TLS |
 
 ## 🛠️ Desarrollo local

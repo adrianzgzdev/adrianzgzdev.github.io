@@ -3,1438 +3,538 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AdrianZgzDev | Portfolio</title>
+    <title>AdrianZgzDev | Del hardware industrial al software robótico</title>
 
     <!-- Icons -->
-    <link rel="icon" href="assets/icons/favicon.ico" sizes="any" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/icons/favicon-16x16.png"
-    />
-    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
-    <link rel="manifest" href="assets/icons/site.webmanifest" />
-    <meta
-      name="msapplication-config"
-      content="assets/icons/browserconfig.xml"
-    />
-    <meta name="theme-color" content="#0b1020" />
+    <link rel="icon" href="/assets/icons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml" />
+    <meta name="theme-color" content="#070b16" />
 
     <meta
       name="description"
       content="Portfolio de Adrián Zgz (AdrianZgzDev). Técnico Electromecánico con 25+ años de experiencia industrial en transición hacia Mobile Robotics (ROS 2, Nav2) y Full-Stack (Python, FastAPI, React) aplicado a AGV/AMR systems."
     />
-
-    <!-- Canonical -->
     <link rel="canonical" href="https://www.adrianzgzdev.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AdrianZgzDev" />
+    <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content="Adrián Zgz Dev | Portfolio Híbrido" />
     <meta
       property="og:description"
       content="25+ años de experiencia industrial + Mobile Robotics + Full-Stack. Proyectos reales con ROS 2, Nav2, FastAPI y React aplicados a AGV/AMR systems."
     />
     <meta property="og:url" content="https://www.adrianzgzdev.com/" />
+    <meta property="og:image" content="https://www.adrianzgzdev.com/assets/icons/android-chrome-512x512.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adrián Zgz Dev | Portfolio Híbrido" />
+    <meta
+      name="twitter:description"
+      content="25+ años de experiencia industrial + Mobile Robotics + Full-Stack aplicados a AGV/AMR systems."
+    />
+    <meta name="twitter:image" content="https://www.adrianzgzdev.com/assets/icons/android-chrome-512x512.png" />
 
-    <!-- Orbitron (solo para la marca) -->
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrián Zgz",
+        "alternateName": "AdrianZgzDev",
+        "url": "https://www.adrianzgzdev.com/",
+        "email": "adrianzgzdev@gmail.com",
+        "jobTitle": "Técnico Electromecánico · Mobile Robotics & Full-Stack Developer",
+        "address": { "@type": "PostalAddress", "addressLocality": "Zaragoza", "addressCountry": "ES" },
+        "knowsAbout": ["ROS 2", "Nav2", "AGV/AMR", "Python", "FastAPI", "React", "Electromecánica industrial"],
+        "sameAs": [
+          "https://github.com/adrianzgzdev",
+          "https://www.linkedin.com/in/adrianzgzdev"
+        ]
+      }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Turnstile (client) -->
-    <script
-      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-      async
-      defer
-    ></script>
+    <!-- Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-    <style>
-      :root {
-        --bg: #0b1020;
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.68);
-        --line: rgba(255, 255, 255, 0.12);
-        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        --radius: 18px;
-        --focus: rgba(124, 58, 237, 0.7);
-        --brand: #00e5ff;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        height: 100%;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-
-      section[id] {
-        scroll-margin-top: 24px;
-      }
-
-      ::selection {
-        background: rgba(124, 58, 237, 0.55);
-        color: #fff;
-      }
-
-      body {
-        margin: 0;
-        font-family:
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          Segoe UI,
-          Roboto,
-          Helvetica,
-          Arial,
-          "Apple Color Emoji",
-          "Segoe UI Emoji";
-        color: var(--text);
-        background:
-          radial-gradient(
-            1100px 650px at 15% 10%,
-            rgba(124, 58, 237, 0.16),
-            transparent 75%
-          ),
-          radial-gradient(
-            1100px 650px at 85% 20%,
-            rgba(34, 197, 94, 0.11),
-            transparent 75%
-          ),
-          radial-gradient(
-            1100px 750px at 50% 100%,
-            rgba(59, 130, 246, 0.08),
-            transparent 78%
-          ),
-          var(--bg);
-        line-height: 1.55;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .wrap {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 28px 18px 60px;
-      }
-
-      /* TOPBAR */
-      .topbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 14px;
-      }
-
-      /* ✅ BRAND (icon + text) */
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 8px 10px;
-        border-radius: 12px;
-        line-height: 1;
-      }
-
-      .brand:hover {
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      .brand:focus-visible {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
-        border: 1px solid rgba(124, 58, 237, 0.6);
-      }
-
-      .brand__icon {
-        height: 56px; /* 52–60 */
-        width: auto;
-        display: block;
-        object-fit: contain;
-        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
-      }
-
-      .brand__name {
-        font-family:
-          "Orbitron",
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          Arial;
-        font-weight: 700;
-        font-size: 30px;
-        letter-spacing: 0.2px;
-        color: var(--brand);
-        line-height: 1;
-        position: relative;
-        top: 1px;
-        text-shadow: 0 10px 22px rgba(0, 229, 255, 0.18);
-      }
-
-      nav {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .navlink {
-        padding: 8px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
-        color: rgba(255, 255, 255, 0.86);
-        font-size: 13px;
-      }
-
-      .navlink:hover {
-        background: rgba(255, 255, 255, 0.07);
-      }
-
-      header {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 18px;
-        align-items: stretch;
-        margin-top: 10px;
-      }
-
-      .hero {
-        background-color: rgba(15, 21, 38, 0.72);
-        background-image: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.07),
-          rgba(255, 255, 255, 0.035)
-        );
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 26px 22px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: -2px;
-        background:
-          radial-gradient(
-            500px 200px at 20% 0%,
-            rgba(124, 58, 237, 0.35),
-            transparent 60%
-          ),
-          radial-gradient(
-            500px 200px at 80% 0%,
-            rgba(34, 197, 94, 0.28),
-            transparent 60%
-          );
-        filter: blur(18px);
-        opacity: 0.55;
-        pointer-events: none;
-      }
-
-      .hero > * {
-        position: relative;
-      }
-
-      .badge {
-        display: inline-flex;
-        gap: 8px;
-        align-items: center;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 13px;
-        width: fit-content;
-      }
-
-      h1 {
-        font-size: clamp(26px, 4vw, 38px);
-        margin: 14px 0 6px;
-        letter-spacing: -0.5px;
-      }
-
-      .headline-sub {
-        margin: 0 0 14px;
-        color: rgba(255, 255, 255, 0.78);
-        font-weight: 700;
-        letter-spacing: -0.2px;
-      }
-
-      .subtitle {
-        color: var(--muted);
-        margin: 0 0 16px;
-        font-size: 15.5px;
-      }
-
-      .cta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 14px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 11px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.06);
-        transition:
-          transform 0.12s ease,
-          background 0.12s ease,
-          border-color 0.12s ease,
-          opacity 0.12s ease;
-        font-weight: 700;
-        font-size: 14px;
-        cursor: pointer;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-        background: rgba(255, 255, 255, 0.09);
-        border-color: rgba(255, 255, 255, 0.22);
-      }
-
-      .btn:disabled {
-        cursor: not-allowed;
-        opacity: 0.7;
-      }
-
-      .btn.primary {
-        background: linear-gradient(
-          90deg,
-          rgba(124, 58, 237, 0.95),
-          rgba(34, 197, 94, 0.85)
-        );
-        border: 0;
-      }
-
-      .btn.primary:hover {
-        filter: brightness(1.03);
-      }
-
-      .panel,
-      section {
-        background-color: rgba(15, 21, 38, 0.72);
-        background-image: linear-gradient(
-          rgba(255, 255, 255, 0.045),
-          rgba(255, 255, 255, 0.045)
-        );
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .panel {
-        padding: 18px;
-      }
-
-      .facts {
-        display: grid;
-        gap: 12px;
-        height: 100%;
-        align-content: start;
-      }
-
-      .fact {
-        padding: 14px;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-      }
-
-      .fact .k {
-        font-weight: 800;
-      }
-
-      .fact .v {
-        color: var(--muted);
-        font-size: 14px;
-        margin-top: 4px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-        margin-top: 18px;
-        align-items: start;
-      }
-
-      section {
-        padding: 18px;
-      }
-
-      h2 {
-        font-size: 16px;
-        margin: 0 0 12px;
-        letter-spacing: 0.3px;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.86);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      h2::before {
-        content: "";
-        width: 22px;
-        height: 4px;
-        border-radius: 999px;
-        background: linear-gradient(
-          90deg,
-          rgba(124, 58, 237, 0.95),
-          rgba(34, 197, 94, 0.85)
-        );
-        flex: none;
-      }
-
-      .cards {
-        display: grid;
-        gap: 12px;
-      }
-
-      .card {
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 14px;
-        padding: 14px;
-        transition:
-          border-color 0.15s ease,
-          background 0.15s ease;
-      }
-
-      .card:hover {
-        border-color: rgba(255, 255, 255, 0.22);
-        background: rgba(255, 255, 255, 0.075);
-      }
-
-      .card h3 {
-        margin: 0 0 6px;
-        font-size: 16px;
-      }
-
-      .card p {
-        margin: 0 0 10px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .bullets {
-        margin: 10px 0 0;
-        padding-left: 18px;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 13.5px;
-      }
-
-      .bullets li {
-        margin: 6px 0;
-      }
-
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .tag {
-        font-size: 12.5px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(0, 0, 0, 0.18);
-        color: rgba(255, 255, 255, 0.84);
-        white-space: nowrap;
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .mini {
-        font-size: 13px;
-        color: var(--muted);
-        margin-top: 8px;
-      }
-
-      footer {
-        margin-top: 22px;
-        color: rgba(255, 255, 255, 0.55);
-        font-size: 13px;
-        text-align: center;
-      }
-
-      label {
-        display: block;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 6px;
-        font-weight: 700;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        padding: 12px;
-        border-radius: 12px;
-        background: rgba(0, 0, 0, 0.2);
-        border: 1px solid var(--line);
-        color: var(--text);
-        outline: none;
-        font-family: inherit;
-      }
-
-      input:focus,
-      textarea:focus,
-      .btn:focus,
-      .navlink:focus {
-        box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
-        border-color: rgba(124, 58, 237, 0.6);
-        outline: none;
-      }
-
-      textarea {
-        resize: vertical;
-      }
-
-      .hp {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-
-      @media (max-width: 900px) {
-        .topbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        header {
-          grid-template-columns: 1fr;
-        }
-        .grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .brand__icon {
-          height: 44px;
-        }
-        .brand__name {
-          font-size: 16px;
-        }
-      }
-
-      @media (max-width: 420px) {
-        .brand__name {
-          display: none;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <noscript>
+      <style>
+        .reveal { opacity: 1 !important; transform: none !important; }
+        .lvl i::after { width: var(--w, 0); }
+      </style>
+    </noscript>
   </head>
 
   <body>
-    <div class="wrap">
-      <div class="topbar">
-        <!-- ✅ Brand -->
-        <a class="brand" href="/" aria-label="Inicio">
-          <img
-            class="brand__icon"
-            src="assets/brand/logo-icon.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <span class="brand__name">AdrianZgzDev</span>
-        </a>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
 
-        <nav aria-label="Navegación principal">
-          <a class="navlink" href="#proyectos">Proyectos</a>
-          <a class="navlink" href="#skills">Skills</a>
-          <a class="navlink" href="#contacto">Contacto</a>
-        </nav>
-      </div>
-
-      <header>
-        <div class="hero">
-          <span class="badge"
-            >Electromecánica industrial → Robotics & Full-Stack</span
-          >
-
-          <h1>
-            Adrián ·
-            <span style="color: rgba(255, 255, 255, 0.86)">AdrianZgzDev</span>
-          </h1>
-          <p class="headline-sub">Zaragoza (España)</p>
-
-          <p class="subtitle">
-            Perfil híbrido con 25+ años de experiencia industrial en
-            diagnóstico, mantenimiento, reparación y gestión de clientes.
-            Conozco la máquina desde el hardware y estoy ampliando ese
-            conocimiento con Robotics (ROS 2, Nav2) y Full-Stack development
-            (Python, FastAPI, React) para construir sistemas industriales
-            completos, desde la lógica del robot hasta el dashboard de
-            monitorización.
-          </p>
-
-          <div class="cta">
-            <a
-              class="btn primary"
-              href="https://github.com/adrianzgzdev"
-              target="_blank"
-              rel="noopener"
-              >🐙 GitHub
-            </a>
-            <a
-              class="btn"
-              href="https://www.linkedin.com/in/adrianzgzdev"
-              target="_blank"
-              rel="noopener"
-              >💼 LinkedIn</a
-            >
-            <a class="btn" href="mailto:adrianzgzdev@gmail.com">✉️ Email</a>
-            <a class="btn" href="#contacto">📩 Contactar</a>
-          </div>
-
-          <p class="mini">
-            Busco oportunidades donde la experiencia industrial y mi crecimiento
-            en software aporten una ventaja real.
-          </p>
-        </div>
-
-        <div class="panel">
-          <div class="facts">
-            <div class="fact">
-              <div class="k">🎯 Enfoque Realista</div>
-              <div class="v">
-                Aportar 25+ años de experiencia industrial, responsabilidad
-                profesional y trato directo con clientes al entorno Tech.
-              </div>
-            </div>
-
-            <div class="fact">
-              <div class="k">🤖 Aprendizaje Dual</div>
-              <div class="v">
-                Formación práctica en Robotics (ROS 2, Nav2) y Full-Stack
-                development (Python, FastAPI, React) para construir sistemas
-                industriales completos.
-              </div>
-            </div>
-
-            <div class="fact">
-              <div class="k">🧩 Fortalezas Reales</div>
-              <div class="v">
-                Gestión de clientes clave, diagnóstico electromecánico profundo
-                y disciplina constante para aprender y evolucionar.
-              </div>
-            </div>
-
-            <div class="fact">
-              <div class="k">📚 Evolución</div>
-              <div class="v">
-                Pasar del hardware al software: entender la lógica de la máquina
-                y las interfaces web que permiten monitorizarla, gestionarla y
-                mejorarla.
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div class="grid">
-        <!-- ============================== -->
-        <!-- COLUMNA IZQUIERDA: PROYECTOS   -->
-        <!-- ============================== -->
-        <section id="proyectos">
-          <h2>Proyectos de Aprendizaje y Portafolio</h2>
-
-          <div class="cards">
-            <!-- ✅ PROYECTO AGV DESTACADO ✅ -->
-            <div
-              class="card"
-              style="
-                border-color: rgba(124, 58, 237, 0.5);
-                background: linear-gradient(
-                  135deg,
-                  rgba(255, 255, 255, 0.08) 0%,
-                  rgba(255, 255, 255, 0.03) 100%
-                );
-              "
-            >
-              <!-- Imagen Destacada con efecto edge-to-edge -->
-              <div
-                style="
-                  margin: -14px -14px 14px -14px;
-                  overflow: hidden;
-                  border-radius: 13px 13px 0 0;
-                  position: relative;
-                "
-              >
-                <img
-                  src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo_phase_4.gif"
-                  alt="AGV Fleet Dashboard con navegación, misión, supervisión de seguridad y monitorización web en tiempo real"
-                  style="
-                    width: 100%;
-                    display: block;
-                    border-bottom: 1px solid var(--line);
-                  "
-                />
-                <div
-                  style="
-                    position: absolute;
-                    top: 12px;
-                    left: 12px;
-                    background: rgba(34, 197, 94, 0.9);
-                    color: #000;
-                    font-size: 11px;
-                    font-weight: 800;
-                    padding: 4px 10px;
-                    border-radius: 999px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                  "
-                >
-                  🌟 Proyecto Integrado
-                </div>
-              </div>
-
-              <h3>
-                🤖 Autonomous AGV Logistics Platform | ROS 2 + Nav2 + Full-Stack
-              </h3>
-              <p>
-                Proyecto desarrollado desde cero y evolucionado por fases para
-                aplicar conceptos de mobile robotics en un entorno industrial
-                simulado. Desde la navegación autónoma básica hasta un sistema
-                completo con dashboard de monitorización en tiempo real.
-              </p>
-
-              <div class="tags">
-                <span
-                  class="tag"
-                  style="border-color: rgba(59, 130, 246, 0.5); color: #93c5fd"
-                  >ROS 2 Jazzy</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(168, 85, 247, 0.5); color: #d8b4fe"
-                  >Nav2</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(234, 179, 8, 0.5); color: #fde047"
-                  >Python</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(249, 115, 22, 0.5); color: #fdba74"
-                  >Gazebo Sim</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(248, 113, 113, 0.5); color: #fca5a5"
-                  >Safety Zones</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(34, 197, 94, 0.5); color: #86efac"
-                  >FastAPI</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(34, 197, 94, 0.5); color: #86efac"
-                  >WebSocket</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(6, 182, 212, 0.5); color: #67e8f9"
-                  >React</span
-                >
-              </div>
-
-              <ul class="bullets">
-                <li>
-                  <b>Navegación autónoma:</b> Implementación de Nav2 y Local
-                  Costmaps para evasión de obstáculos dinámicos en simulación.
-                </li>
-                <li>
-                  <b>Ejecución de misión:</b> Desarrollo en Python de una misión
-                  completa con estados de approach, pickup, loading, dropoff y
-                  unloading.
-                </li>
-                <li>
-                  <b>Supervisión de seguridad:</b> Monitorización en tiempo real
-                  de zonas SAFE, SLOW, STOP y RESTRICTED mediante un nodo ROS 2
-                  desacoplado.
-                </li>
-                <li>
-                  <b>Dashboard de monitorización:</b> Integración full-stack
-                  (ROS 2 → FastAPI → WebSocket → React) con visualización en
-                  tiempo real de posición, velocidad, zonas de seguridad, estado
-                  de misión y safety event log.
-                </li>
-                <li>
-                  <b>Visión industrial:</b> Aplicación de criterios de maniobra,
-                  operación y seguridad basados en experiencia real en entorno
-                  industrial.
-                </li>
-              </ul>
-
-              <div class="links">
-                <a
-                  class="btn"
-                  href="https://www.linkedin.com/posts/adrianzgzdev_ros2-fastapi-websocket-ugcPost-7452209786818953217-FKbA?utm_source=share&utm_medium=member_desktop&rcm=ACoAADNO5HoBKxnM04TFYw7co-JFg6aOu_PAq64"
-                  target="_blank"
-                  rel="noopener"
-                  >📺 Demo Dashboard (P4)</a
-                >
-                <a
-                  class="btn"
-                  href="https://www.linkedin.com/posts/adrianzgzdev_ros2-nav2-robaejtica-activity-7443182548211523584-UYLR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADNO5HoBKxnM04TFYw7co-JFg6aOu_PAq64"
-                  target="_blank"
-                  rel="noopener"
-                  >📺 Demo Safety Zones (P3)</a
-                >
-                <a
-                  class="btn"
-                  href="https://github.com/adrianzgzdev/agv_logistics_nav2"
-                  target="_blank"
-                  rel="noopener"
-                  >📦 Ver Código</a
-                >
-              </div>
-            </div>
-
-            <!-- ✅ PROYECTO PEDIDO SERVICIOS ✅ -->
-            <div class="card">
-              <div
-                style="
-                  display: grid;
-                  grid-template-columns: 1fr 1fr;
-                  gap: 2px;
-                  margin: -14px -14px 14px -14px;
-                  overflow: hidden;
-                  border-radius: 13px 13px 0 0;
-                "
-              >
-                <img
-                  src="assets/projects/pedido-servicios-lista.png"
-                  alt="Lista de partes de trabajo con estado pendiente/volcado y sincronización"
-                  style="
-                    width: 100%;
-                    display: block;
-                    border-bottom: 1px solid var(--line);
-                  "
-                />
-                <img
-                  src="assets/projects/pedido-servicios-timeline.png"
-                  alt="Vista de jornada con cálculo de horas trabajadas y empalmes automáticos"
-                  style="
-                    width: 100%;
-                    display: block;
-                    border-bottom: 1px solid var(--line);
-                  "
-                />
-              </div>
-
-              <h3>
-                🔧 Pedido Servicios — PWA Offline-First con Sincronización
-                Multi-Dispositivo
-              </h3>
-              <p>
-                Herramienta que uso yo mismo en mi trabajo diario de campo. Nace
-                de un problema real: sin cobertura, no podía registrar los
-                partes de trabajo en el momento y tenía que rehacerlos de
-                memoria al recuperar señal. Diseñada offline-first para
-                funcionar siempre, con backend propio para sincronizar entre mi
-                móvil y mi ordenador.
-              </p>
-
-              <div class="tags">
-                <span
-                  class="tag"
-                  style="border-color: rgba(59, 130, 246, 0.5); color: #93c5fd"
-                  >PWA</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(34, 197, 94, 0.5); color: #86efac"
-                  >Node.js</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(34, 197, 94, 0.5); color: #86efac"
-                  >Express</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(168, 85, 247, 0.5); color: #d8b4fe"
-                  >PostgreSQL</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(6, 182, 212, 0.5); color: #67e8f9"
-                  >Docker</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(249, 115, 22, 0.5); color: #fdba74"
-                  >Service Worker</span
-                >
-                <span
-                  class="tag"
-                  style="border-color: rgba(248, 113, 113, 0.5); color: #fca5a5"
-                  >REST API</span
-                >
-              </div>
-
-              <ul class="bullets">
-                <li>
-                  <b>Offline-first real:</b> los datos se guardan siempre en el
-                  dispositivo primero (localStorage); la sincronización es una
-                  capa añadida que nunca bloquea el trabajo, incluso sin
-                  conexión.
-                </li>
-                <li>
-                  <b>Sincronización multi-dispositivo:</b> backend en Node.js +
-                  Express con PostgreSQL, resolución de conflictos por
-                  last-write-wins y borrado lógico para propagar cambios entre
-                  dispositivos sin pérdida de datos.
-                </li>
-                <li>
-                  <b>Infraestructura en producción:</b> API contenerizada con
-                  Docker, desplegada en mi propio VPS junto a mi infraestructura
-                  self-hosted, servida con HTTPS.
-                </li>
-                <li>
-                  <b>Diseño pensado para el campo:</b> interfaz de alto
-                  contraste, botones grandes para uso con guantes/móvil, y una
-                  máscara de horas a medida para evitar errores de entrada.
-                </li>
-                <li>
-                  <b>En uso real:</b> empleada a diario en jornadas de trabajo
-                  de mantenimiento industrial, no es un proyecto de
-                  demostración.
-                </li>
-              </ul>
-
-              <div class="links">
-                <a
-                  class="btn"
-                  href="https://github.com/adrianzgzdev/partes"
-                  target="_blank"
-                  rel="noopener"
-                  >📦 Ver Código (PWA)</a
-                >
-              </div>
-            </div>
-
-            <!-- PROYECTO N8N -->
-            <div class="card">
-              <h3>🤖 AI Contact Router (n8n)</h3>
-              <p>
-                Proyecto de automatización orientado a resolver un problema
-                real: filtrar spam, clasificar mensajes entrantes y enrutar
-                contactos antes de llegar al correo.
-              </p>
-
-              <div class="tags">
-                <span class="tag">n8n</span>
-                <span class="tag">Webhooks</span>
-                <span class="tag">OpenAI API</span>
-                <span class="tag">Workflow Logic</span>
-              </div>
-
-              <ul class="bullets">
-                <li>Integración de Turnstile (Cloudflare) y honeypots.</li>
-                <li>
-                  Clasificación básica con prompts de IA y routing a
-                  Telegram/Gmail.
-                </li>
-              </ul>
-
-              <div class="links">
-                <a
-                  class="btn"
-                  href="https://github.com/adrianzgzdev/n8n-ai-contact-router"
-                  target="_blank"
-                  rel="noopener"
-                  >📦 Ver Código</a
-                >
-              </div>
-            </div>
-
-            <!-- CASO DE ESTUDIO N8N -->
-            <div class="card">
-              <h3>📌 Infraestructura Self-Hosted</h3>
-              <p>
-                Despliegue de mi propio servidor para entender cómo se publican,
-                protegen y mantienen aplicaciones en un entorno real.
-              </p>
-              <div class="tags">
-                <span class="tag">VPS (Hetzner)</span>
-                <span class="tag">Docker Swarm</span>
-                <span class="tag">Traefik v3</span>
-                <span class="tag">TLS</span>
-              </div>
-            </div>
-
-            <!-- PORTAFOLIO WEB -->
-            <div class="card">
-              <h3>🏗️ Portafolio / CV (GitHub Pages)</h3>
-              <p>
-                Web estática desarrollada a mano para consolidar bases de
-                HTML/CSS y construir una presencia profesional sin depender de
-                constructores visuales.
-              </p>
-              <div class="tags">
-                <span class="tag">HTML / CSS</span>
-                <span class="tag">GitHub Pages</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ============================== -->
-        <!-- COLUMNA DERECHA: SKILLS/ABOUT  -->
-        <!-- ============================== -->
-        <section id="skills">
-          <h2>Skills & Background</h2>
-
-          <div class="cards">
-            <!-- ✅ NOW / FOCUS (Doble Vía) ✅ -->
-            <div
-              class="card"
-              style="
-                border-color: rgba(234, 179, 8, 0.4);
-                background: rgba(234, 179, 8, 0.05);
-              "
-            >
-              <h3>🎯 Mi Enfoque Actual</h3>
-              <p>
-                Tras más de 25 años en el entorno industrial, estoy orientando
-                mi disciplina y experiencia hacia dos áreas clave del software
-                aplicado:
-              </p>
-
-              <ul class="bullets">
-                <li>
-                  <b>Robotics (ROS 2 / Python):</b> Comprendiendo navegación
-                  autónoma, simulación, cinemática y prueba/error en entornos
-                  controlados.
-                </li>
-                <li>
-                  <b>Full-Stack (Web / APIs):</b> Consolidando bases de Frontend
-                  y Backend para crear paneles de control y herramientas
-                  industriales web.
-                </li>
-                <li>
-                  <b>Sinergia:</b> Mi objetivo a largo plazo es conectar ambos
-                  mundos, desde la lógica de la máquina hasta la interfaz que la
-                  monitoriza y gestiona.
-                </li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3>🏭 Experiencia Industrial Consolidada</h3>
-              <p>
-                25+ años en el sector industrial y en Serma (Linde) desde 2015.
-                Hoy mi mayor valor diferencial no es solo el código, sino la
-                visión global de la máquina, el cliente y la operación.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Key Account Management</span>
-                <span class="tag">Electromecánica Avanzada</span>
-                <span class="tag">Diagnóstico de Averías</span>
-                <span class="tag">Baterías de Litio & AGVs</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <h3>💻 Desarrollo Técnico Actual</h3>
-              <p>
-                Aprendiendo a través de proyectos reales, documentación técnica
-                y práctica constante. Prioridad actual: construir bases sólidas
-                y resolver problemas de forma autónoma.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Python (Intermediate)</span>
-                <span class="tag">ROS 2 / Nav2 (Working Level)</span>
-                <span class="tag">FastAPI / WebSocket (Intermediate)</span>
-                <span class="tag">React (Intermediate)</span>
-                <span class="tag">HTML / CSS / JS (Intermediate)</span>
-              </div>
-
-              <ul class="bullets">
-                <li>
-                  Construyendo una base sólida para aportar en automation, AGVs
-                  y herramientas web.
-                </li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3>🧰 Entorno Técnico</h3>
-              <p>
-                Herramientas y entornos que utilizo para aprender, desarrollar y
-                probar soluciones.
-              </p>
-
-              <div class="tags">
-                <span class="tag">Linux / Ubuntu</span>
-                <span class="tag">RViz2 / Gazebo</span>
-                <span class="tag">VS Code</span>
-                <span class="tag">Node.js / Vite</span>
-                <span class="tag">Postman</span>
-                <span class="tag">Git</span>
-                <span class="tag">Docker</span>
-                <span class="tag">WSL2</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <h3>🔌 Automatización y Lógica</h3>
-              <p>
-                Capacidad para entender procesos secuenciales y diagramas de
-                flujo, aplicada ahora a webhooks, integración de APIs y
-                automatizaciones.
-              </p>
-
-              <div class="tags">
-                <span class="tag">n8n</span>
-                <span class="tag">Webhooks</span>
-                <span class="tag">API Integration</span>
-              </div>
-            </div>
-
-            <div class="card">
-              <h3>🌍 Idiomas</h3>
-              <p>
-                English for technical documentation and continuous learning.
-              </p>
-
-              <ul class="bullets">
-                <li>
-                  <b>Lectura y Comprensión:</b> Uso habitual de documentación
-                  técnica, manuales y repositorios (ROS 2, GitHub).
-                </li>
-                <li>
-                  <b>Objetivo actual:</b> Ganar fluidez conversacional en
-                  entornos profesionales.
-                </li>
-              </ul>
-            </div>
-
-            <div
-              class="card"
-              style="
-                border-color: rgba(234, 179, 8, 0.4);
-                background: rgba(234, 179, 8, 0.05);
-              "
-            >
-              <h3>🚀 Hacia AGV/AMR</h3>
-              <p>
-                Técnico electromecánico desde 1998 y en Linde MH desde 2015,
-                trabajando día a día con carretillas y sistemas de manutención
-                industrial. La transición natural de esa experiencia es el mundo
-                AGV/AMR: robots que resuelven el mismo problema —mover carga de
-                forma segura y eficiente— pero de forma autónoma y coordinada
-                por software.
-              </p>
-              <p>
-                Mi objetivo es unir esos dos mundos: la comprensión profunda de
-                la máquina real con las herramientas de desarrollo full-stack
-                que permiten programarla, monitorizarla y gestionar su flota.
-              </p>
-
-              <ul class="bullets">
-                <li>
-                  <b>De la máquina al algoritmo:</b> conozco a fondo la
-                  mecánica, la electrónica y la operativa de flota que hoy
-                  gestionan estos robots.
-                </li>
-                <li>
-                  <b>Full-stack aplicado:</b> desarrollo de paneles de control,
-                  APIs y dashboards en tiempo real (React, FastAPI, WebSocket)
-                  para supervisar y comandar la operación.
-                </li>
-                <li>
-                  <b>Navegación autónoma:</b> bases prácticas de ROS 2 y Nav2
-                  para entender cómo un AGV percibe, planifica y se mueve por su
-                  entorno.
-                </li>
-                <li>
-                  <b>Objetivo:</b> aportar esa base de campo en equipos de
-                  desarrollo o integración de AGV/AMR, donde conocer la máquina
-                  real marca la diferencia.
-                </li>
-              </ul>
-
-              <div class="tags">
-                <span class="tag">Material Handling</span>
-                <span class="tag">Fleet Management</span>
-                <span class="tag">ROS 2 / Nav2</span>
-                <span class="tag">Full-Stack Web</span>
-                <span class="tag">Real-Time Dashboards</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- CONTACTO -->
-      <section id="contacto" style="margin-top: 18px">
-        <h2>Contacto</h2>
-
-        <div class="card">
-          <h3>¿Hablamos?</h3>
-          <p>
-            Rellena este formulario y recibiré tu mensaje directamente en mi
-            sistema.
-          </p>
-
-          <form
-            id="contactForm"
-            style="display: grid; gap: 12px; margin-top: 16px"
-          >
-            <div class="hp" aria-hidden="true">
-              <label for="website">Website</label>
-              <input
-                id="website"
-                type="text"
-                name="honeypot"
-                tabindex="-1"
-                autocomplete="off"
-              />
-            </div>
-
-            <div>
-              <label for="name">Nombre</label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Tu nombre"
-                required
-              />
-            </div>
-
-            <div>
-              <label for="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Tu email"
-                required
-              />
-            </div>
-
-            <div>
-              <label for="message">Mensaje</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="¿Cómo puedo ayudarte o qué sinergias podemos encontrar?"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-
-            <!-- Turnstile invisible -->
-            <div
-              class="cf-turnstile"
-              data-sitekey="0x4AAAAAACNBcPIlgokieADp"
-              data-size="invisible"
-              data-theme="dark"
-            ></div>
-
-            <button
-              id="submitBtn"
-              type="submit"
-              class="btn primary"
-              style="font-size: 15px"
-            >
-              🚀 Enviar mensaje
-            </button>
-          </form>
-
-          <p
-            id="statusMessage"
-            class="mini"
-            style="margin-top: 12px; min-height: 20px"
-            aria-live="polite"
-          ></p>
-        </div>
-      </section>
-
-      <footer>© <span id="y"></span> Adrián · adrianzgzdev.com</footer>
+    <!-- Animated background -->
+    <div class="bg-fx" aria-hidden="true">
+      <div class="bg-grid"></div>
+      <div class="bg-glow bg-glow--1"></div>
+      <div class="bg-glow bg-glow--2"></div>
+      <div class="bg-glow bg-glow--3"></div>
     </div>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
+    <!-- ===== NAV ===== -->
+    <header class="nav" id="nav">
+      <a class="brand" href="#top" aria-label="Inicio">
+        <img class="brand__icon" src="/assets/brand/logo-icon.png" alt="" aria-hidden="true" />
+        <span class="brand__name">AdrianZgzDev</span>
+      </a>
 
-      const form = document.getElementById("contactForm");
-      const statusMsg = document.getElementById("statusMessage");
-      const submitBtn = document.getElementById("submitBtn");
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a href="#evolucion">Evolución</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-      // ✅ Your webhook (PROD)
-      const webhookUrl = "https://n8n.adrianzgzdev.com/webhook/form_contact";
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="https://github.com/adrianzgzdev" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn--primary btn--sm" href="#contacto">Contactar</a>
+      </div>
 
-      // Turnstile: render once, then execute on each submit
-      let tsWidgetId = null;
-      let tsResolve = null;
-      let tsReject = null;
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
 
-      function initTurnstileOnce() {
-        if (!window.turnstile) return;
-        const el = document.querySelector(".cf-turnstile");
-        if (!el) return;
-        if (tsWidgetId !== null) return;
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top">
+      <div class="hero__inner reveal">
+        <span class="pill">
+          <span class="pill__dot"></span>
+          Electromecánica industrial <span class="pill__arrow">→</span> Robotics &amp; Full-Stack
+        </span>
 
-        tsWidgetId = turnstile.render(el, {
-          sitekey: "0x4AAAAAACNBcPIlgokieADp",
-          size: "invisible",
-          callback: (token) => {
-            if (tsResolve) {
-              tsResolve(token);
-              tsResolve = null;
-              tsReject = null;
-            }
-          },
-          "error-callback": () => {
-            if (tsReject) {
-              tsReject(new Error("Turnstile error"));
-              tsResolve = null;
-              tsReject = null;
-            }
-          },
-          "expired-callback": () => {
-            if (tsReject) {
-              tsReject(new Error("Turnstile expired"));
-              tsResolve = null;
-              tsReject = null;
-            }
-          },
-        });
-      }
+        <h1 class="hero__title">
+          Del <span class="grad grad--warm">hardware industrial</span><br />
+          al <span class="grad grad--cool">software que lo pilota</span>
+        </h1>
 
-      window.addEventListener("load", initTurnstileOnce);
+        <p class="hero__sub">
+          Soy <b>Adrián</b> — perfil híbrido con <b>25+ años</b> de experiencia industrial
+          (diagnóstico, mantenimiento, gestión de clientes) que hoy construye sistemas completos:
+          desde la lógica del robot con <b>ROS 2 / Nav2</b> hasta el dashboard de monitorización
+          con <b>Python, FastAPI y React</b>.
+        </p>
 
-      async function getTurnstileToken() {
-        initTurnstileOnce();
-        if (!window.turnstile || tsWidgetId === null) return null;
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#proyectos">🚀 Ver proyectos</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/adrianzgzdev" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <a class="btn btn--ghost" href="mailto:adrianzgzdev@gmail.com">✉️ Email</a>
+        </div>
 
-        return await new Promise((resolve, reject) => {
-          tsResolve = resolve;
-          tsReject = reject;
+        <p class="hero__loc">📍 Zaragoza, España · Abierto a oportunidades AGV/AMR &amp; Full-Stack</p>
 
-          try {
-            turnstile.reset(tsWidgetId);
-            turnstile.execute(tsWidgetId);
-          } catch (e) {
-            tsResolve = null;
-            tsReject = null;
-            reject(e);
-          }
+        <div class="hero__stats">
+          <div class="stat"><span class="stat__num" data-count="25" data-suffix="+">0</span><span class="stat__label">años en industria</span></div>
+          <div class="stat"><span class="stat__num" data-count="2015">0</span><span class="stat__label">en Linde MH desde</span></div>
+          <div class="stat"><span class="stat__num" data-count="5" data-suffix="">0</span><span class="stat__label">proyectos reales</span></div>
+          <div class="stat"><span class="stat__num" data-count="4" data-suffix=" fases">0</span><span class="stat__label">plataforma AGV</span></div>
+        </div>
+      </div>
 
-          setTimeout(() => {
-            if (tsReject) {
-              tsReject(new Error("Turnstile timeout"));
-              tsResolve = null;
-              tsReject = null;
-            }
-          }, 8000);
-        });
-      }
+      <a class="hero__scroll" href="#evolucion" aria-label="Bajar">
+        <span></span>
+      </a>
+    </section>
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    <!-- ===== EVOLUCIÓN / TIMELINE ===== -->
+    <section class="section" id="evolucion">
+      <div class="section__head reveal">
+        <span class="eyebrow">Mi trayectoria</span>
+        <h2>De la máquina real al algoritmo</h2>
+        <p class="section__lead">
+          No empiezo de cero: traigo décadas entendiendo cómo se mueve, falla y se repara la
+          maquinaria industrial. Ahora sumo el software que la hace autónoma.
+        </p>
+      </div>
 
-        // Honeypot
-        const hp = form.querySelector('input[name="honeypot"]');
-        if (hp && hp.value.trim() !== "") {
-          statusMsg.textContent = "✅ ¡Recibido!";
-          return;
-        }
+      <div class="timeline">
+        <article class="tl reveal">
+          <div class="tl__marker">🔧</div>
+          <div class="tl__body">
+            <span class="tl__year">1998 → hoy</span>
+            <h3>Técnico Electromecánico Industrial</h3>
+            <p>
+              Diagnóstico de averías, mantenimiento y reparación a pie de máquina. Conozco el
+              hardware desde dentro: mecánica, electrónica y operativa real.
+            </p>
+            <div class="chips">
+              <span class="chip">Electromecánica avanzada</span>
+              <span class="chip">Diagnóstico de averías</span>
+              <span class="chip">Baterías de litio &amp; AGVs</span>
+            </div>
+          </div>
+        </article>
 
-        statusMsg.textContent = "Verificando... 🛡️";
-        statusMsg.style.color = "";
-        submitBtn.disabled = true;
+        <article class="tl reveal">
+          <div class="tl__marker">🏭</div>
+          <div class="tl__body">
+            <span class="tl__year">2015 → hoy · Serma (Linde MH)</span>
+            <h3>Gestión de clientes &amp; flota</h3>
+            <p>
+              Trabajo diario con carretillas y sistemas de manutención. Trato directo con clientes
+              clave y visión global de máquina + cliente + operación.
+            </p>
+            <div class="chips">
+              <span class="chip">Key Account Management</span>
+              <span class="chip">Material Handling</span>
+              <span class="chip">Fleet Management</span>
+            </div>
+          </div>
+        </article>
 
-        try {
-          const token = await getTurnstileToken();
-          if (!token) throw new Error("No Turnstile token");
+        <article class="tl reveal tl--accent">
+          <div class="tl__marker">🤖</div>
+          <div class="tl__body">
+            <span class="tl__year">Ahora · en formación activa</span>
+            <h3>Mobile Robotics + Full-Stack</h3>
+            <p>
+              Uno los dos mundos: navegación autónoma (ROS 2, Nav2) y desarrollo web (FastAPI,
+              WebSocket, React) para programar, monitorizar y gestionar la flota.
+            </p>
+            <div class="chips">
+              <span class="chip chip--hot">ROS 2 / Nav2</span>
+              <span class="chip chip--hot">FastAPI</span>
+              <span class="chip chip--hot">React</span>
+              <span class="chip chip--hot">Real-Time Dashboards</span>
+            </div>
+          </div>
+        </article>
 
-          statusMsg.textContent = "Enviando datos... 📡";
+        <article class="tl reveal tl--goal">
+          <div class="tl__marker">🎯</div>
+          <div class="tl__body">
+            <span class="tl__year">Objetivo</span>
+            <h3>Hacia AGV/AMR</h3>
+            <p>
+              Aportar mi base de campo en equipos de desarrollo o integración de AGV/AMR, donde
+              conocer la máquina real —cómo percibe, planifica y se mueve— marca la diferencia.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-          const fd = new FormData(form);
-          fd.append("cf-turnstile-response", token);
-          fd.append("source", "adrianzgzdev.com");
-          fd.append("page", location.href);
-          fd.append("ts", new Date().toISOString());
+    <!-- ===== PROYECTOS ===== -->
+    <section class="section" id="proyectos">
+      <div class="section__head reveal">
+        <span class="eyebrow">Portafolio</span>
+        <h2>Proyectos reales, no demos de escaparate</h2>
+        <p class="section__lead">
+          Herramientas que uso yo mismo, plataformas construidas por fases e infraestructura que
+          mantengo en producción.
+        </p>
+      </div>
 
-          const controller = new AbortController();
-          const t = setTimeout(() => controller.abort(), 12000);
+      <!-- FEATURED -->
+      <article class="feature reveal">
+        <div class="feature__media">
+          <span class="feature__badge">🌟 Proyecto integrado</span>
+          <img
+            class="zoomable"
+            src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo_phase_4.gif"
+            alt="AGV Fleet Dashboard con navegación, misión, supervisión de seguridad y monitorización web en tiempo real"
+            loading="lazy"
+          />
+        </div>
+        <div class="feature__body">
+          <h3>🤖 Autonomous AGV Logistics Platform</h3>
+          <p class="feature__tagline">ROS 2 + Nav2 + Full-Stack · desarrollado desde cero y evolucionado por fases</p>
+          <p>
+            Sistema completo de logística AGV en entorno industrial simulado: desde la navegación
+            autónoma básica hasta un dashboard de monitorización en tiempo real.
+          </p>
 
-          const res = await fetch(webhookUrl, {
-            method: "POST",
-            body: fd,
-            signal: controller.signal,
-          });
+          <div class="tags">
+            <span class="tag tag--blue">ROS 2 Jazzy</span>
+            <span class="tag tag--purple">Nav2</span>
+            <span class="tag tag--yellow">Python</span>
+            <span class="tag tag--orange">Gazebo Sim</span>
+            <span class="tag tag--red">Safety Zones</span>
+            <span class="tag tag--green">FastAPI</span>
+            <span class="tag tag--green">WebSocket</span>
+            <span class="tag tag--cyan">React</span>
+          </div>
 
-          clearTimeout(t);
+          <ul class="bullets">
+            <li><b>Navegación autónoma:</b> Nav2 y local costmaps para evasión de obstáculos dinámicos.</li>
+            <li><b>Ejecución de misión:</b> máquina de estados en Python (approach, pickup, loading, dropoff, unloading).</li>
+            <li><b>Supervisión de seguridad:</b> zonas SAFE / SLOW / STOP / RESTRICTED con un nodo ROS 2 desacoplado.</li>
+            <li><b>Dashboard full-stack:</b> ROS 2 → FastAPI → WebSocket → React, con posición, velocidad, misión y safety log en vivo.</li>
+          </ul>
 
-          if (!res.ok) throw new Error("Server not OK");
+          <div class="links">
+            <a class="btn btn--primary btn--sm" href="https://github.com/adrianzgzdev/agv_logistics_nav2" target="_blank" rel="noopener">📦 Ver código</a>
+            <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/posts/adrianzgzdev_ros2-fastapi-websocket-ugcPost-7452209786818953217-FKbA?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener">📺 Demo Dashboard (P4)</a>
+            <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/posts/adrianzgzdev_ros2-nav2-robaejtica-activity-7443182548211523584-UYLR?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener">📺 Demo Safety Zones (P3)</a>
+          </div>
+        </div>
+      </article>
 
-          statusMsg.textContent =
-            "✅ ¡Recibido! Me pondré en contacto contigo pronto.";
-          statusMsg.style.color = "#22c55e";
-          form.reset();
-        } catch (err) {
-          console.error(err);
-          statusMsg.textContent =
-            "❌ Ups, algo falló. Escríbeme a adrianzgzdev@gmail.com";
-          statusMsg.style.color = "#ef4444";
-        } finally {
-          submitBtn.disabled = false;
-        }
-      });
-    </script>
+      <!-- GRID -->
+      <div class="proj-grid">
+        <article class="pcard pcard--wide reveal">
+          <div class="pcard__media pcard__media--split">
+            <img class="zoomable" src="/assets/projects/pedido-servicios-lista.png" alt="Lista de partes de trabajo con estado pendiente/volcado y sincronización" loading="lazy" />
+            <img class="zoomable" src="/assets/projects/pedido-servicios-timeline.png" alt="Vista de jornada con cálculo de horas trabajadas y empalmes automáticos" loading="lazy" />
+          </div>
+          <div class="pcard__body">
+            <h3>🔧 Pedido Servicios</h3>
+            <p class="pcard__tagline">PWA offline-first con sincronización multi-dispositivo</p>
+            <p>
+              Herramienta que uso a diario en campo. Nace de un problema real: sin cobertura no
+              podía registrar los partes. Offline-first para funcionar siempre, con backend propio
+              para sincronizar móvil ↔ ordenador.
+            </p>
+            <div class="tags">
+              <span class="tag tag--blue">PWA</span>
+              <span class="tag tag--green">Node.js</span>
+              <span class="tag tag--green">Express</span>
+              <span class="tag tag--purple">PostgreSQL</span>
+              <span class="tag tag--cyan">Docker</span>
+              <span class="tag tag--orange">Service Worker</span>
+              <span class="tag tag--red">REST API</span>
+            </div>
+            <div class="links">
+              <a class="btn btn--ghost btn--sm" href="https://github.com/adrianzgzdev/partes" target="_blank" rel="noopener">📦 Ver código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pcard reveal">
+          <div class="pcard__body">
+            <h3>🤖 AI Contact Router</h3>
+            <p class="pcard__tagline">Automatización con n8n</p>
+            <p>
+              Filtra spam, clasifica mensajes entrantes y enruta contactos antes de llegar al
+              correo — con IA y lógica de workflow.
+            </p>
+            <ul class="bullets">
+              <li>Turnstile (Cloudflare) + honeypots.</li>
+              <li>Clasificación con prompts de IA y routing a Telegram/Gmail.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">n8n</span>
+              <span class="tag">Webhooks</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Workflow Logic</span>
+            </div>
+            <div class="links">
+              <a class="btn btn--ghost btn--sm" href="https://github.com/adrianzgzdev/n8n-ai-contact-router" target="_blank" rel="noopener">📦 Ver código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pcard reveal">
+          <div class="pcard__body">
+            <h3>💶 Calculadora de Nómina</h3>
+            <p class="pcard__tagline">Web app en JavaScript vanilla, sin dependencias</p>
+            <p>
+              Estima el salario neto mensual y el bruto/neto anual. Cálculo reactivo en el
+              navegador (horas extra, dietas, IRPF, 12/14 pagas) con persistencia local. Nada
+              sale del dispositivo.
+            </p>
+            <div class="tags">
+              <span class="tag tag--orange">HTML</span>
+              <span class="tag tag--blue">CSS</span>
+              <span class="tag tag--yellow">JavaScript</span>
+              <span class="tag">localStorage</span>
+              <span class="tag">Sin dependencias</span>
+            </div>
+            <div class="links">
+              <a class="btn btn--primary btn--sm" href="https://adrianzgzdev.com/calculadora-nomina/" target="_blank" rel="noopener">▶️ Ver demo en vivo</a>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/adrianzgzdev/calculadora-nomina" target="_blank" rel="noopener">📦 Ver código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pcard reveal">
+          <div class="pcard__body">
+            <h3>📌 Infraestructura Self-Hosted</h3>
+            <p class="pcard__tagline">Mi propio servidor en producción</p>
+            <p>
+              Despliegue de mi VPS para entender cómo se publican, protegen y mantienen aplicaciones
+              en un entorno real.
+            </p>
+            <div class="tags">
+              <span class="tag">VPS (Hetzner)</span>
+              <span class="tag">Docker Swarm</span>
+              <span class="tag">Traefik v3</span>
+              <span class="tag">TLS</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="pcard reveal">
+          <div class="pcard__body">
+            <h3>🏗️ Este portfolio</h3>
+            <p class="pcard__tagline">Web estática hecha a mano</p>
+            <p>
+              Construido sin constructores visuales para consolidar bases de HTML/CSS/JS y tener una
+              presencia profesional propia.
+            </p>
+            <div class="tags">
+              <span class="tag">HTML / CSS / JS</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+            <div class="links">
+              <a class="btn btn--ghost btn--sm" href="/v1/" >🕹️ Ver versión clásica (v1)</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <span class="eyebrow">Skills &amp; background</span>
+        <h2>Lo que traigo y lo que estoy construyendo</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="scard scard--focus reveal">
+          <h3>🎯 Enfoque actual</h3>
+          <p>Oriento mi disciplina industrial hacia dos áreas del software aplicado:</p>
+          <ul class="bullets">
+            <li><b>Robotics (ROS 2 / Python):</b> navegación autónoma, simulación y cinemática.</li>
+            <li><b>Full-Stack:</b> frontend y backend para paneles de control industriales.</li>
+            <li><b>Sinergia:</b> conectar la lógica de la máquina con la interfaz que la gestiona.</li>
+          </ul>
+        </article>
+
+        <article class="scard reveal">
+          <h3>💻 Nivel técnico actual</h3>
+          <p>Aprendiendo con proyectos reales y práctica constante.</p>
+          <div class="levels">
+            <div class="lvl"><span>Python</span><i data-lvl="65"></i></div>
+            <div class="lvl"><span>ROS 2 / Nav2</span><i data-lvl="55"></i></div>
+            <div class="lvl"><span>FastAPI / WebSocket</span><i data-lvl="60"></i></div>
+            <div class="lvl"><span>React</span><i data-lvl="60"></i></div>
+            <div class="lvl"><span>HTML / CSS / JS</span><i data-lvl="70"></i></div>
+          </div>
+        </article>
+
+        <article class="scard reveal">
+          <h3>🏭 Experiencia consolidada</h3>
+          <p>25+ años en industria y en Serma (Linde) desde 2015. Mi valor diferencial: la visión global de máquina, cliente y operación.</p>
+          <div class="chips">
+            <span class="chip">Key Account Management</span>
+            <span class="chip">Electromecánica avanzada</span>
+            <span class="chip">Diagnóstico de averías</span>
+            <span class="chip">Baterías de litio &amp; AGVs</span>
+          </div>
+        </article>
+
+        <article class="scard reveal">
+          <h3>🧰 Entorno técnico</h3>
+          <p>Herramientas que uso para aprender, desarrollar y probar.</p>
+          <div class="chips">
+            <span class="chip">Linux / Ubuntu</span>
+            <span class="chip">RViz2 / Gazebo</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Node.js / Vite</span>
+            <span class="chip">Postman</span>
+            <span class="chip">Git</span>
+            <span class="chip">Docker</span>
+            <span class="chip">WSL2</span>
+          </div>
+        </article>
+
+        <article class="scard reveal">
+          <h3>🔌 Automatización &amp; lógica</h3>
+          <p>Proceso secuencial y diagramas de flujo aplicados a webhooks, APIs y automatizaciones.</p>
+          <div class="chips">
+            <span class="chip">n8n</span>
+            <span class="chip">Webhooks</span>
+            <span class="chip">API Integration</span>
+          </div>
+        </article>
+
+        <article class="scard reveal">
+          <h3>🌍 Idiomas</h3>
+          <p>English for technical documentation and continuous learning.</p>
+          <ul class="bullets">
+            <li><b>Lectura técnica:</b> documentación, manuales y repositorios (ROS 2, GitHub).</li>
+            <li><b>Objetivo:</b> fluidez conversacional en entornos profesionales.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section section--contact" id="contacto">
+      <div class="contact">
+        <div class="contact__intro reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2>¿Hablamos?</h2>
+          <p>
+            Busco oportunidades donde la experiencia industrial y mi crecimiento en software aporten
+            una ventaja real. Rellena el formulario y recibiré tu mensaje directamente en mi sistema.
+          </p>
+          <div class="contact__links">
+            <a class="btn btn--ghost btn--sm" href="https://github.com/adrianzgzdev" target="_blank" rel="noopener">🐙 GitHub</a>
+            <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/in/adrianzgzdev" target="_blank" rel="noopener">💼 LinkedIn</a>
+            <a class="btn btn--ghost btn--sm" href="mailto:adrianzgzdev@gmail.com">✉️ Email</a>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact__form reveal">
+          <div class="hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" type="text" name="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Tu email" required />
+          </div>
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="¿Cómo puedo ayudarte o qué sinergias podemos encontrar?" rows="4" required></textarea>
+          </div>
+
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAACNBcPIlgokieADp" data-size="invisible" data-theme="dark"></div>
+
+          <button id="submitBtn" type="submit" class="btn btn--primary btn--block">🚀 Enviar mensaje</button>
+          <p id="statusMessage" class="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="y"></span> Adrián · adrianzgzdev.com</span>
+      <a href="/v1/">Versión clásica</a>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">✕</button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+    </div>
+
+    <script src="/js/main.js" defer></script>
   </body>
 </html>

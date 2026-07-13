@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/assets/icons/site.webmanifest" />
     <meta name="msapplication-config" content="/assets/icons/browserconfig.xml" />
-    <meta name="theme-color" content="#0b1020" />
+    <meta name="theme-color" content="#070b16" />
 
     <meta
       name="description"
@@ -22,13 +22,41 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AdrianZgzDev" />
+    <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content="Adrián Zgz Dev | Portfolio Híbrido" />
     <meta
       property="og:description"
       content="25+ años de experiencia industrial + Mobile Robotics + Full-Stack. Proyectos reales con ROS 2, Nav2, FastAPI y React aplicados a AGV/AMR systems."
     />
     <meta property="og:url" content="https://www.adrianzgzdev.com/" />
+    <meta property="og:image" content="https://www.adrianzgzdev.com/assets/icons/android-chrome-512x512.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adrián Zgz Dev | Portfolio Híbrido" />
+    <meta
+      name="twitter:description"
+      content="25+ años de experiencia industrial + Mobile Robotics + Full-Stack aplicados a AGV/AMR systems."
+    />
+    <meta name="twitter:image" content="https://www.adrianzgzdev.com/assets/icons/android-chrome-512x512.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrián Zgz",
+        "alternateName": "AdrianZgzDev",
+        "url": "https://www.adrianzgzdev.com/",
+        "email": "adrianzgzdev@gmail.com",
+        "jobTitle": "Técnico Electromecánico · Mobile Robotics & Full-Stack Developer",
+        "address": { "@type": "PostalAddress", "addressLocality": "Zaragoza", "addressCountry": "ES" },
+        "knowsAbout": ["ROS 2", "Nav2", "AGV/AMR", "Python", "FastAPI", "React", "Electromecánica industrial"],
+        "sameAs": [
+          "https://github.com/adrianzgzdev",
+          "https://www.linkedin.com/in/adrianzgzdev"
+        ]
+      }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -221,6 +249,7 @@
         <div class="feature__media">
           <span class="feature__badge">🌟 Proyecto integrado</span>
           <img
+            class="zoomable"
             src="https://raw.githubusercontent.com/adrianzgzdev/agv_logistics_nav2/main/demo_phase_4.gif"
             alt="AGV Fleet Dashboard con navegación, misión, supervisión de seguridad y monitorización web en tiempo real"
             loading="lazy"
@@ -264,8 +293,8 @@
       <div class="proj-grid">
         <article class="pcard pcard--wide reveal">
           <div class="pcard__media pcard__media--split">
-            <img src="/assets/projects/pedido-servicios-lista.png" alt="Lista de partes de trabajo con estado pendiente/volcado y sincronización" loading="lazy" />
-            <img src="/assets/projects/pedido-servicios-timeline.png" alt="Vista de jornada con cálculo de horas trabajadas y empalmes automáticos" loading="lazy" />
+            <img class="zoomable" src="/assets/projects/pedido-servicios-lista.png" alt="Lista de partes de trabajo con estado pendiente/volcado y sincronización" loading="lazy" />
+            <img class="zoomable" src="/assets/projects/pedido-servicios-timeline.png" alt="Vista de jornada con cálculo de horas trabajadas y empalmes automáticos" loading="lazy" />
           </div>
           <div class="pcard__body">
             <h3>🔧 Pedido Servicios</h3>
@@ -499,6 +528,12 @@
       <span>© <span id="y"></span> Adrián · adrianzgzdev.com</span>
       <a href="/v1/">Versión clásica</a>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">✕</button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+    </div>
 
     <script src="/js/main.js" defer></script>
   </body>

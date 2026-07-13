@@ -14,16 +14,41 @@
 
   // Menú móvil
   if (burger && nav) {
-    burger.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+    const setMenu = (open) => {
+      nav.classList.toggle("open", open);
       burger.setAttribute("aria-expanded", String(open));
-    });
+      burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    };
+    burger.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
     nav.querySelectorAll(".nav__links a").forEach((a) =>
-      a.addEventListener("click", () => {
-        nav.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
-      })
+      a.addEventListener("click", () => setMenu(false))
     );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setMenu(false);
+    });
+    document.addEventListener("click", (e) => {
+      if (nav.classList.contains("open") && !nav.contains(e.target)) setMenu(false);
+    });
+  }
+
+  // Scroll-spy: resalta el enlace de la sección visible
+  const navLinks = Array.from(document.querySelectorAll(".nav__links a"));
+  const spySections = navLinks
+    .map((a) => document.querySelector(a.getAttribute("href")))
+    .filter(Boolean);
+  if ("IntersectionObserver" in window && spySections.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const id = "#" + e.target.id;
+            navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === id));
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    spySections.forEach((s) => spy.observe(s));
   }
 
   // Nav "scrolled" + barra de progreso
@@ -108,6 +133,36 @@
     levels.forEach((el) => {
       el.style.setProperty("--w", el.dataset.lvl + "%");
       el.classList.add("animate");
+    });
+  }
+
+  // Lightbox para imágenes ampliables
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxClose = document.getElementById("lightboxClose");
+  if (lightbox && lightboxImg) {
+    const openLightbox = (src, alt) => {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const closeLightbox = () => {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      lightboxImg.src = "";
+    };
+    document.querySelectorAll("img.zoomable").forEach((img) =>
+      img.addEventListener("click", () => openLightbox(img.currentSrc || img.src, img.alt))
+    );
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
     });
   }
 
